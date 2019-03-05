@@ -12,7 +12,7 @@ function getAddress() {
     };
 
     chrome.storage.sync.set({address}, function() {
-        console.log('Value is set to ' + address);
+        //console.log('Value is set to ' + address);
     });
 }
 

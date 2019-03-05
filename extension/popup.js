@@ -12,7 +12,7 @@ chrome.storage.sync.get('color', function(data) {
 
 chrome.storage.sync.get('address', function(result) {
   savedAddress = result.address;
-  console.log(result.address);
+  //console.log(result.address);
   if (savedAddress != null) {
     injectAddressInPopup(savedAddress);
   }

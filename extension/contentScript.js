@@ -10,10 +10,10 @@ var $newdiv1 = $( "<div class='autoFillContainer' style='position: fixed;top: 0;
 
 setTimeout(function(){ 
   $( ".panel-body-row" ).each(function( index ) {
-    console.log(this);
+    //console.log(this);
   
     $(this).click(function() {
-      console.log("click");
+      // console.log("click");
       setTimeout(function(){ 
         $( "<button id='saveAddress'>Save Address</button>" ).appendTo("div.address");
         saveAddress = saveAddress = document.getElementById('saveAddress');
@@ -25,12 +25,12 @@ setTimeout(function(){
   });
 }, 3000);
 
-console.log(window.location.host);
+//console.log(window.location.host);
 if (window.location.host == "shoppingcart.aliexpress.com") {
   $( $newdiv1 ).appendTo("body");
 
   chrome.storage.sync.get('address', function(result) {
-    console.log(result.address);
+    //console.log(result.address);
     injectAddressInPopup(result.address);
     let pasteAddressBtn = document.getElementById('pasteAddress');
     let pasteMessage = document.getElementById('pasteMessage');
