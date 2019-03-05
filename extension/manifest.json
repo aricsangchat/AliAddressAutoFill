@@ -1,0 +1,34 @@
+{
+  "name": "Ali Autofill",
+  "version": "1.0",
+  "description": "Autofills address when placing order on aliexpress",
+  "permissions": ["activeTab", "declarativeContent", "storage", "http://*/*","https://*/*"],
+  "background": {
+    "scripts": ["thirdParty/jquery-3.3.1.js", "background.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/AliAutoIcon16.png",
+      "32": "images/AliAutoIcon32.png",
+      "48": "images/AliAutoIcon48.png",
+      "128": "images/AliAutoIcon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/AliAutoIcon16.png",
+    "32": "images/AliAutoIcon32.png",
+    "48": "images/AliAutoIcon48.png",
+    "128": "images/AliAutoIcon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches":["http://*/*","https://*/*"],
+      "run_at": "document_end",
+      "js": ["thirdParty/jquery-3.3.1.js", "contentScript.js"]
+    }
+  ],
+  "options_page": "options.html",
+  "manifest_version": 2
+}
