@@ -1,14 +1,8 @@
-let changeColor = document.getElementById('changeColor');
 let saveAddress = document.getElementById('saveAddress');
 let pasteAddress = document.getElementById('pasteAddress');
 let pasteMessage = document.getElementById('pasteMessage');
 
 let savedAddress = null;
-
-chrome.storage.sync.get('color', function(data) {
-  changeColor.style.backgroundColor = data.color;
-  changeColor.setAttribute('value', data.color);
-});
 
 chrome.storage.sync.get('address', function(result) {
   savedAddress = result.address;
@@ -17,16 +11,6 @@ chrome.storage.sync.get('address', function(result) {
     injectAddressInPopup(savedAddress);
   }
 });
-
-changeColor.onclick = function(element) {
-
-  let color = element.target.value;
-  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    chrome.tabs.executeScript(
-        tabs[0].id,
-        {code: 'document.body.style.backgroundColor = "' + color + '";'});
-  });
-};
 
 saveAddress.onclick = function(element) {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
