@@ -110,6 +110,42 @@ function generateProductLink() {
         $("<a href='https://www.aliexpress.com/item/AMIU-Tibetan-Buddhist-Lucky-Charm-Tibetan-Bracelets-Bangles-For-Men-Handmade-Knots-Nylon-Thread-Red-Rope/32853244746.html?spm=2114.10010108.1000013.9.1c154c5f1cpDlA&gps-id=pcDetailBottomMoreThisSeller&scm=1007.13339.128551.0&scm_id=1007.13339.128551.0&scm-url=1007.13339.128551.0&pvid=350ffe2b-63c9-44ca-8182-423f85fb111b' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Black Coconut Shell Braided Bracelet')) {
         $("<a href='https://www.aliexpress.com/item/Tibetan-buddhist-Braided-Cotton-thread-Lucky-Knots-Silver-Charm-bracelet-Natural-Coconut-shell-beads-Carved-OM/32894510488.html?spm=a2g0s.8937460.0.0.1d982e0eOBBnHY' target='_blank'>Order Now</a>").appendTo($(this));
+      } else if (product == 'Tibetan Lucky Rope Knots Bracelet, Braided Bracelet, Yoga Bracelet, Meditation Bracelet, Prayer Bracelet, Mens Bracelet, Womens Bracelet') {
+        if (productAttr == 'Black') {
+          $("<a href='https://www.aliexpress.com/item/AMIU-Tibetan-Handmade-Buddhist-Lucky-Bracelets-Bangles-For-Women-Men-Black-Rope-Knots-Amulet-Gift-Tibetan/32836615669.html?spm=a2g0s.8937460.0.0.46d92e0euFJBXc' target='_blank'>Order Now</a>").appendTo($(this));
+        } else if (productAttr == 'Blue') {
+          $("<a href='https://www.aliexpress.com/item/AMIU-Tibetan-Buddhist-Lucky-Charm-Tibetan-Bracelets-Bangles-For-Women-Men-Handmade-Knots-Deongare-Rope-Christmas/32839043603.html?spm=a2g0s.8937460.0.0.46d92e0euFJBXc' target='_blank'>Order Now</a>").appendTo($(this));
+        } else if (productAttr == 'Green') {
+          $("<a href='https://www.aliexpress.com/item/AMIU-Tibetan-Buddhist-Lucky-Charm-Tibetan-Bracelets-Bangles-For-Women-Men-Handmade-Knots-Green-Rope-Christmas/32834588878.html?spm=2114.10010108.1000013.15.189e231aRdEFIE&gps-id=pcDetailBottomMoreThisSeller&scm=1007.13339.128551.0&scm_id=1007.13339.128551.0&scm-url=1007.13339.128551.0&pvid=21c47b6f-5ed7-4226-aeb6-ab8b20a989fb' target='_blank'>Order Now</a>").appendTo($(this));
+        } else if (productAttr == 'Yellow') {
+          $("<a href='https://www.aliexpress.com/item/AMIU-Tibetan-Buddhist-Lucky-Charm-Tibetan-Bracelets-Bangles-For-Women-Men-Handmade-Knots-Golden-Rope-Christmas/32837148680.html?spm=2114.10010108.1000013.19.3971527fzekXJh&gps-id=pcDetailBottomMoreThisSeller&scm=1007.13339.128551.0&scm_id=1007.13339.128551.0&scm-url=1007.13339.128551.0&pvid=2d2a8d89-4ff2-40fa-8ba4-407c5bfcfec8' target='_blank'>Order Now</a>").appendTo($(this));
+        } else if (productAttr == 'Brown') {
+          $("<a href='https://www.aliexpress.com/item/Tibetan-Buddhist-Handmade-Lucky-Rope-Bracelet-Men-Tibetan-Buddhist-Knots-Size-Adjustable-Bracelet-For-Women/32868578644.html?spm=a2g0s.8937460.0.0.46d92e0euFJBXc' target='_blank'>Order Now</a>").appendTo($(this));
+        }
+      } else if (product == 'Tibetan Lucky Rope Knots Braided Bracelet | Colorful Braided Bracelet | Yoga Bracelet Meditation Bracelet Bracelet for Women Gift for Her') {
+        if (productAttr == 'Green') {
+          $("<a href='https://www.aliexpress.com/item/AMIU-Tibetan-Buddhist-Lucky-Charm-Tibetan-Bracelets-Bangles-For-Women-Men-Handmade-Knots-Green-Rope-Amulet/32879660616.html?spm=a2g0s.8937460.0.0.5ac42e0ehk9CsL' target='_blank'>Order Now</a>").appendTo($(this));
+        } else if (productAttr == 'Yellow') {
+          $("<a href='https://www.aliexpress.com/item/AMIU-Tibetan-Buddhist-Tibetan-Lucky-Braided-Bracelets-Bangles-For-Women-Men-Handmade-Knots-Green-Rope-Amulet/32957200339.html?spm=a2g0s.8937460.0.0.5a192e0ew98OMX' target='_blank'>Order Now</a>").appendTo($(this));
+        }
+      } else if (product.includes('Rainbow Bracelet')) {
+        if (product.includes('7 Chakra Om Tree of Life Reiki Bracelet')) {
+          $("<a href='https://www.aliexpress.com/item/Handmade-Tibetan-Silver-Bracelet-Life-Tree-7-Chakra-Beads-Reiki-Buddha-Prayer-Natural-Stone-Yoga-Bracelet/32833028481.html?spm=a2g0s.8937460.0.0.53e62e0ewKIqkK' target='_blank'>Order Now</a>").appendTo($(this));
+        } else {
+          $("<a href='https://www.aliexpress.com/item/Tibetan-Buddhist-Handbraided-Knots-Lucky-Rope-Bracelet-Monks-Blessed-Handmade-Yoga-Meditation-Healing-Bangle-7-Chakra/32919203294.html?spm=a2g0s.8937460.0.0.6d4c2e0eKYDQu4' target='_blank'>Order Now</a>").appendTo($(this));
+        }
+      } else if (product.includes('Meditating Astronaut Necklace')) {
+        if (productAttr == 'Silver') {
+          $("<a href='https://www.aliexpress.com/item/Astronaut-Pendant-Necklace-Galaxy-Universe-Spaceman-Meditation-Trinket-Retro-Stainless-Steel-Chain-Men-Necklace/32847446862.html?spm=a2g0s.8937460.0.0.34892e0eQSvGJu' target='_blank'>Order Now</a>").appendTo($(this));
+        } else if (productAttr == 'Black') {
+          $("<a href='https://www.aliexpress.com/item/Black-Color-Astronaut-Necklace-Universe-Spaceman-Pendant-Stainless-Steel-Chain-Men-Rock-Party-Novelty-Space-Jewelry/32853858506.html?spm=a2g0s.8937460.0.0.34892e0eQSvGJu' target='_blank'>Order Now</a>").appendTo($(this));
+        } else if (productAttr == 'Gold') {
+          $("<a href='https://www.aliexpress.com/item/Gold-Color-Astronaut-Pendant-Necklace-Universe-Spaceman-Stainless-Steel-Chain-Necklace-for-Unisex-Couple-Outer-Space/32854959741.html?spm=2114.10010108.1000013.11.17dc155cjvwv1l&gps-id=pcDetailBottomMoreThisSeller&scm=1007.13339.128551.0&scm_id=1007.13339.128551.0&scm-url=1007.13339.128551.0&pvid=8678ad3d-c40a-489f-a1aa-2ef9e4c3439c' target='_blank'>Order Now</a>").appendTo($(this));
+        }
+      } else if (product.includes('Chakra Meditation 7 Colors 3d Night Light Lamp')) {
+        $("<a href='https://www.aliexpress.com/item/Acrylic-7-Color-Changing-3D-LED-nightlight-meditation-of-acrylic-bedroom-lamp-living-room-lights-Decoration/32755293418.html?spm=a2g0s.8937460.0.0.35392e0eMdpWvf' target='_blank'>Order Now</a>").appendTo($(this));
+      } else if (product.includes('Meditating Astronaut Key Chain')) {
+        $("<a href='https://www.aliexpress.com/item/Astronaut-Keychain-Galaxy-Universe-Meditation-Spaceman-Key-Chains-Stainless-Steel-Rings-Chains-Personalised-Creative-Car-Keyring/32847580314.html?spm=a2g0s.8937460.0.0.3e2b2e0eOCNcGf' target='_blank'>Order Now</a>").appendTo($(this));
       }
     }
   });
