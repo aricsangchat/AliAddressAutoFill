@@ -1,6 +1,6 @@
 let saveAddress;
 
-var $newdiv1 = $( "<div class='autoFillContainer' style='position: fixed;top: 0;right: 0;'><div id='address'><p id='name'></p><p id='firstLine'></p><p id='secondLine'></p><p id='city'></p><p id='state'></p><p id='zip'></p><p id='country'></p></div><button id='pasteAddress'>Paste Address</button><button id='pasteMessage'>Paste Drop Ship Message</button></div>" );
+var $newdiv1 = $( "<div class='autoFillContainer' style='z-index: 2;background: #fff;padding: 20px;width: 222px;position: fixed;top: 0;left: 0;'><div id='address'><p id='name'></p><p id='firstLine'></p><p id='secondLine'></p><p id='city'></p><p id='state'></p><p id='zip'></p><p id='country'></p></div><button id='pasteAddress'>Paste Address</button><button id='pasteMessage'>Paste Drop Ship Message</button><p>Hi this is a drop shipping order. Please no invoice, no receipt, no billing info and no coupons. Thank you!</p></div>" );
 
 if (window.location.host == "shoppingcart.aliexpress.com") {
   $( $newdiv1 ).appendTo("body");
@@ -16,7 +16,17 @@ if (window.location.host == "shoppingcart.aliexpress.com") {
     };
 
     pasteMessage.onclick = function(element) {
-      $(".message-text").val("Hi this is a drop shipping order. Please no invoice, no receipt, no billing info and no coupons. Thank you!");
+      //$("textarea").val("Hi this is a drop shipping order. Please no invoice, no receipt, no billing info and no coupons. Thank you!");
+      console.log($( "textarea" ));
+      $( "textarea" ).each(function (index) {
+        // if ($( "textarea" ).length > 2) {
+        //   changeValue($( "textarea" ).get( 0 ),"Hi this is a drop shipping order. Please no invoice, no receipt, no billing info and no coupons. Thank you!");
+
+        // } else {
+          changeValue($( "textarea" ).get( index ),"Hi this is a drop shipping order. Please no invoice, no receipt, no billing info and no coupons. Thank you!");
+        //}
+      });
+
     };
   });
 } else if (window.location.pathname == "/your/shops/me/advertising/promoted-listings") {
@@ -55,14 +65,33 @@ function getAddress() {
   });
 }
 
+function changeValue(element, value) {
+  const event = new Event('input', { bubbles: true })
+  element.value = value
+  element.dispatchEvent(event)
+}
+
 function pasteAddress(address) {
-  document.getElementsByClassName("sa-contact-name")[0].value = address.name;
+  //document.getElementsByClassName("sa-contact-name")[0].value = address.name;
   //setCountry(address.country)
-  $("input[name='address']").val(address.firstLine);
-  $("input[name='address2']").val(address.secondLine);
-  $("input[name='city']").val(address.city);
-  $("input[name='province']").val(address.state);
-  $("input[name='zip']").val(address.zip);
+  console.log(address.country);
+  changeValue($( "input[name='contactPerson']" ).get( 0 ),address.name);
+  changeValue($( "input[name='address']" ).get( 0 ),address.firstLine);
+  changeValue($( "input[id='address2']" ).get( 0 ),address.secondLine);
+  changeValue($( "input[name='zip']" ).get( 0 ),address.zip);
+
+  if ( address.country !== 'UNITED STATES') {
+    changeValue($( "input[id='city']" ).get( 0 ),address.city);
+    changeValue($( "input[placeholder='State/Province/Region']" ).get( 0 ),address.state);
+  }
+  
+
+  // $("input[name='contactPerson']").val(address.name);
+  // $("input[name='address']").val(address.firstLine);
+  // $("input[name='address2']").val(address.secondLine);
+  // $("input[id='city']").val(address.city);
+  // $("input[name='province']").val(address.state);
+  // $("input[name='zip']").val(address.zip);
 
 }
 
@@ -88,7 +117,7 @@ function generateProductLink() {
         }
       } else if (product.includes("108 Natural Sandalwood Prayer Beads Bracelet")) {
         $("<a href='https://www.aliexpress.com/item/pulseras-108-beads-8mm-Natural-Sandalwood-Buddhist-Buddha-Wood-Prayer-Bead-Mala-Unisex-Men-bracelets-bangles/32746625331.html?spm=a2g0s.9042311.0.0.710a4c4dp16vHO' target='_blank'>Order Now</a>").appendTo($(this));
-      } else if (product == "100% Pashmina Cashmere Scarf Shawl, Blue Pink Paisley Scarf Shawl, Festival Pashmina, Winter Scarf Shawl, New Women Men Scarf Shawl") {
+      } else if (product == "Pashmina Scarf Shawl, Blue Pink Paisley Scarf Shawl, Festival Pashmina, Winter Scarf Shawl, New Women Men Scarf Shawl") {
         $("<a href='https://www.aliexpress.com/item/Women-s-Winter-Warm-Pashmina-Shawl-Wrap-Scarf-Vintage-Jacquard-Ethnic-Paisley-Cashew-Pattern-Scarf-Shawl/32823394003.html?spm=a2g0s.9042311.0.0.23cb4c4dzqUQP0' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes("Rainbow Elephant Pattern")) {
         $("<a href='https://www.aliexpress.com/item/Hot-Ethnic-Style-Scarf-For-Lady-Women-Double-Sided-Elephant-National-Wind-Scarf-Wraps-Shawl-Bufandas/32895261681.html?spm=a2g0s.9042311.0.0.ac394c4drN8ZjI' target='_blank'>Order Now</a>").appendTo($(this));
@@ -105,15 +134,19 @@ function generateProductLink() {
       } else if (product.includes('Buddha Amulet Bracelet')) {
         $("<a href='https://www.aliexpress.com/item/AMIU-Tibetan-Buddhist-Lucky-Woven-Amulet-Tibetan-Cord-Bracelets-Bangles-For-Women-Men-Handmade-Rope-Buddha/32939715293.html?spm=a2g0s.8937460.0.0.72c02e0e99R7LZ' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Multi Color Braided Bracelet')) {
-        $("<a href='https://www.aliexpress.com/item/AMIU-Tibetan-Buddhist-Lucky-Charm-Tibetan-Bracelets-Bangles-For-Men-Handmade-Knots-Nylon-Thread-Red-Rope/32853244746.html?spm=2114.10010108.1000013.9.1c154c5f1cpDlA&gps-id=pcDetailBottomMoreThisSeller&scm=1007.13339.128551.0&scm_id=1007.13339.128551.0&scm-url=1007.13339.128551.0&pvid=350ffe2b-63c9-44ca-8182-423f85fb111b' target='_blank'>Order Now</a>").appendTo($(this));
+        $("<a href='https://www.aliexpress.com/item/AMIU-Tibetan-Buddhist-Lucky-Charm-Tibetan-Bracelets-Bangles-For-Women-Men-Handmade-Knots-Black-Rope-Christmas/32859116164.html?spm=2114.10010108.1000010.5.57422e38sKEIZZ&gps-id=pcDetailLeftTrendProduct&scm=1007.13438.130792.0&scm_id=1007.13438.130792.0&scm-url=1007.13438.130792.0&pvid=fc42e51a-45eb-491f-a213-5ca98fcde673' target='_blank'>Order Now</a>").appendTo($(this));
+      } else if (product.includes('Multi Color Tibetan Buddhist Handmade Lucky Rope Knots')) {
+        $("<a href='https://www.aliexpress.com/store/product/Eastisan-2017-Multi-Color-Tibetan-Buddhist-Lama-Braided-Knots-Lucky-Rope-Bracelet-For-Man-Women-Size/1940393_32822654691.html?spm=2114.12010612.8148356.13.45d81a7fW4sfbu' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Black Coconut Shell Braided Bracelet')) {
         $("<a href='https://www.aliexpress.com/item/Tibetan-buddhist-Braided-Cotton-thread-Lucky-Knots-Silver-Charm-bracelet-Natural-Coconut-shell-beads-Carved-OM/32894510488.html?spm=a2g0s.8937460.0.0.1d982e0eOBBnHY' target='_blank'>Order Now</a>").appendTo($(this));
-      } else if (product == 'Tibetan Lucky Rope Knots Bracelet, Braided Bracelet, Yoga Bracelet, Meditation Bracelet, Prayer Bracelet, Mens Bracelet, Womens Bracelet') {
+      } else if (product == 'Tibetan Lucky Rope Knots Bracelet, Braided Bracelet, Yoga Bracelet, Meditation Bracelet, Prayer Bracelet, Mens Bracelet, Womens Bracelet' || product.includes('Original Tibetan Buddhist Handmade')) {
         if (productAttr == 'Brown') {
           $("<a href='https://www.aliexpress.com/item/Tibetan-Buddhist-Handmade-Lucky-Rope-Bracelet-Men-Tibetan-Buddhist-Knots-Size-Adjustable-Bracelet-For-Women/32868578644.html?spm=a2g0s.8937460.0.0.46d92e0euFJBXc' target='_blank'>Order Now</a>").appendTo($(this));
         } else {
           $("<a href='https://www.aliexpress.com/item/2017-AMIU-Handmade-Friendship-Bracelet-Hippy-Colorful-Love-Vintage-Lucky-Charm-Tibetan-Bracelets-Bangles-For-Women/32826062352.html?spm=a2g0s.9042311.0.0.41904c4dWHBVcD' target='_blank'>Order Now</a>").appendTo($(this));
         } 
+      } else if (product.includes('Happiness Tibetan')) {
+        $("<a href='https://www.aliexpress.com/item/Eastisan-Tibetan-Buddhist-Handmade-Knots-Lucky-Rope-Bracelets-For-Women-Men-Buddhism-braided-Jewelry-Multi-Colors/32824972197.html?spm=2114.search0104.3.209.1fbf7e2357Ch3M&ws_ab_test=searchweb0_0,searchweb201602_9_10065_10068_10890_319_10546_10059_10884_317_10548_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_52,ppcSwitch_0&algo_expid=104449a6-8c6e-49f9-be90-bb97ee606e81-27&algo_pvid=104449a6-8c6e-49f9-be90-bb97ee606e81' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product == 'Tibetan Lucky Rope Knots Braided Bracelet | Colorful Braided Bracelet | Yoga Bracelet Meditation Bracelet Bracelet for Women Gift for Her') {
         if (productAttr == 'Green') {
           $("<a href='https://www.aliexpress.com/item/AMIU-Tibetan-Buddhist-Lucky-Charm-Tibetan-Bracelets-Bangles-For-Women-Men-Handmade-Knots-Green-Rope-Amulet/32879660616.html?spm=a2g0s.8937460.0.0.5ac42e0ehk9CsL' target='_blank'>Order Now</a>").appendTo($(this));
@@ -140,18 +173,22 @@ function generateProductLink() {
         $("<a href='https://www.aliexpress.com/item/new-arrival-high-quality-asimo-3D-key-chain-spaceman-keychain-robot-key-ring-key-holder-drop/32702161349.html?spm=a2g0s.8937460.0.0.329d2e0eJa4Bah' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Chakra Meditation 7 Colors 3d Night Light Lamp')) {
         $("<a href='https://www.aliexpress.com/item/3D-7-Color-Changing-Yoga-LED-Meditation-of-Acrylic-Night-Light-Bedroom-Illusion-Lamp-livingroom-Bedside/32840799118.html?spm=a2g0s.9042311.0.0.b5464c4dZnhXGz' target='_blank'>Order Now</a>").appendTo($(this));
+      } else if (product.includes('Buddha Meditation 7 Colors 3d Night Light Lamp')) {
+        $("<a href='https://www.aliexpress.com/item/Buddha-7-Color-Changing-Night-Light-3D-LED-Atmosphere-Bulbing-Lamp-Heart-visual-illusion-for-Kids/32839459325.html?spm=a2g0s.8937460.0.0.4bf82e0eU18vlv' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Meditating Astronaut Key Chain')) {
         $("<a href='https://www.aliexpress.com/item/Astronaut-Keychain-Galaxy-Universe-Meditation-Spaceman-Key-Chains-Stainless-Steel-Rings-Chains-Personalised-Creative-Car-Keyring/32847580314.html?spm=a2g0s.8937460.0.0.3e2b2e0eOCNcGf' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Tibetan Buddhist Charm Bracelet, Lucky Rope Knot Bracelet, Yoga Bracelet, Meditation Bracelet, Prayer Bracelet')) {
         $("<a href='https://www.aliexpress.com/store/product/AMIU-Tibetan-Buddhist-Ball-Prayer-Bead-Lucky-Charm-Tibetan-Bracelets-Bangles-For-Women-Men-Handmade-Knots/1675041_32850472242.html?spm=a2g1y.12024536.productList_2428021.pic_2' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Buckminsterfullerene Molecule')) {
         $("<a href='https://www.aliexpress.com/item/Buckminsterfullerene-Molecule-Ball-Necklace-Formula-C60-Special-Novelty-Male-Female-Pendant-Necklace/32861893408.html?spm=a2g0s.8937460.0.0.6cfb2e0e3qqfGl' target='_blank'>Order Now</a>").appendTo($(this));
-      } else if (product.includes('100% Pashmina Cashmere Scarf Shawl, Dark Paisley Scarf Shawl, Festival Pashmina, Winter Scarf Shawl, New Women Men Scarf Shawl')) {
+      } else if (product.includes('Pashmina Scarf Shawl, Dark Paisley Scarf Shawl, Festival Pashmina, Winter Scarf Shawl, New Women Men Scarf Shawl')) {
         $("<a href='https://www.aliexpress.com/item/Scarf-Luxury-Brand-Hot-Sale-Women-200-70cm-Oversize-Cotton-Scarf-Smooth-Touch-Scarves-Chic-Plant/32719142379.html?spm=a2g0s.8937460.0.0.78662e0e8STDhm' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Dark Paisley Scarf Shawl')) {
         $("<a href='https://www.aliexpress.com/item/Scarf-Luxury-Brand-Hot-Sale-Women-200-70cm-Oversize-Cotton-Scarf-Smooth-Touch-Scarves-Chic-Plant/32719142379.html?spm=2114.10010108.1000013.30.7f6b4fbcVaRqT7&gps-id=pcDetailBottomMoreThisSeller&scm=1007.13339.128551.0&scm_id=1007.13339.128551.0&scm-url=1007.13339.128551.0&pvid=c10d9095-158f-4891-b5e5-f03738282111' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Atom Symbol Cosmic')) {
         $("<a href='https://www.aliexpress.com/item/Scarf-Luxury-Brand-Hot-Sale-Women-200-70cm-Oversize-Cotton-Scarf-Smooth-Touch-Scarves-Chic-Plant/32719142379.html?spm=2114.10010108.1000013.30.7f6b4fbcVaRqT7&gps-id=pcDetailBottomMoreThisSeller&scm=1007.13339.128551.0&scm_id=1007.13339.128551.0&scm-url=1007.13339.128551.0&pvid=c10d9095-158f-4891-b5e5-f03738282111' target='_blank'>Order Now</a>").appendTo($(this));
+      } else if (product.includes('Violet Purple Paisley')) {
+        $("<a href='https://www.aliexpress.com/item/DANKEYISI-Ethnic-Winter-Women-Scarf-Jacquard-Scarves-Floral-Print-Shawls-Ladies-Long-Pashminas-Fashion-Stole-Indian/32840324322.html?spm=a2g0s.9042311.0.0.27424c4dvrgnhV' target='_blank'>Order Now</a>").appendTo($(this));
       } else {
         
       }
@@ -177,7 +214,7 @@ function setButtons() {
         }, 1000);
       });
     });
-  }, 5000);
+  }, 10000);
 }
 
 function updateStatusClick() {
