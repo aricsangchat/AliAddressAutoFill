@@ -117,18 +117,26 @@ function generateProductLink() {
         }
       } else if (product.includes("108 Natural Sandalwood Prayer Beads Bracelet")) {
         $("<a href='https://www.aliexpress.com/item/pulseras-108-beads-8mm-Natural-Sandalwood-Buddhist-Buddha-Wood-Prayer-Bead-Mala-Unisex-Men-bracelets-bangles/32746625331.html?spm=a2g0s.9042311.0.0.710a4c4dp16vHO' target='_blank'>Order Now</a>").appendTo($(this));
+      } else if (product.includes("Tibetan Moon Star Bodhi Seed Bracelet")) {
+        $("<a href='https://www.aliexpress.com/item/Eastisan-2017-Tibetan-Buddhist-Handmade-Xingyue-Bodhi-Seed-Mala-Beads-Bracelet-OM-Mani-Padme-Hum-Charm/32820317628.html?spm=2114.search0104.3.70.3c037e23TGogHd&ws_ab_test=searchweb0_0,searchweb201602_9_10065_10068_10890_319_10546_10059_10884_317_10548_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_53,ppcSwitch_0&algo_expid=ae4f1e97-d8eb-4792-ad9b-3bb195861844-9&algo_pvid=ae4f1e97-d8eb-4792-ad9b-3bb195861844' target='_blank'>Order Now</a>").appendTo($(this));
+      }  else if (product.includes("Traditional Tibetan Buddhism Bracelet, Om Mani Padme Hum Engraving, Meditation Bracelet, Mens Bracelet, Vajrayana Bracelet, Double Dorje")) {
+        $("<a href='https://www.aliexpress.com/item/Eastisan-Traditional-Tibetan-Buddhism-Brass-Bracelet-Men-Six-Words-Mantra-OM-MANI-PADME-HUM-Antiqued-Metal/32836172562.html?spm=2114.search0104.3.2.f2e37e23kffEq7&ws_ab_test=searchweb0_0,searchweb201602_9_10065_10068_10890_319_10546_10059_10884_317_10548_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_53,ppcSwitch_0&algo_expid=263c95df-9d08-4b36-9b93-af107bcdcc63-0&algo_pvid=263c95df-9d08-4b36-9b93-af107bcdcc63' target='_blank'>Order Now</a>").appendTo($(this));
+      } else if (product.includes("Infinite Flow Blue Tigers Eye Bracelet, Infinity Charm Bracelet, Energy Bracelet, Cosmic Bracelet, Universe Bracelet, Chakra Bracelet")) {
+        $("<a href='https://www.aliexpress.com/store/product/6mm-Faced-Blue-Tiger-Eye-Stone-Beads-With-Silver-infinite-Charm-Bracelet-For-Man-Woman-Nimbus/1940393_32956853036.html?spm=2114.12010612.8148356.3.5ce84816JVAsCt' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product == "Pashmina Scarf Shawl, Blue Pink Paisley Scarf Shawl, Festival Pashmina, Winter Scarf Shawl, New Women Men Scarf Shawl") {
         $("<a href='https://www.aliexpress.com/item/Women-s-Winter-Warm-Pashmina-Shawl-Wrap-Scarf-Vintage-Jacquard-Ethnic-Paisley-Cashew-Pattern-Scarf-Shawl/32823394003.html?spm=a2g0s.9042311.0.0.23cb4c4dzqUQP0' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes("Rainbow Elephant Pattern")) {
         $("<a href='https://www.aliexpress.com/item/Hot-Ethnic-Style-Scarf-For-Lady-Women-Double-Sided-Elephant-National-Wind-Scarf-Wraps-Shawl-Bufandas/32895261681.html?spm=a2g0s.9042311.0.0.ac394c4drN8ZjI' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes("Chakra Bracelets, Reiki Bracelets, Yoga Bracelets")) {
-        if (productAttr == "Black") {
+        if (productAttr == "Black Agate") {
           $("<a href='https://www.aliexpress.com/item/AMIU-3mm-Natural-Stone-Beads-Tibetan-Stone-Beads-Stretch-Bracelet-For-Men-Women-Yoga-Chakra-Crystal/32909151203.html?spm=a2g0s.8937460.0.0.1da22e0eWDpQLL' target='_blank'>Order Now</a>").appendTo($(this));
-        } else if (productAttr == "Red") {
-          $("<a href='https://www.aliexpress.com/item/Natural-Stone-Handmade-Strand-Bracelet-3mm-Red-Rope-Small-Onyx-Beads-Thin-Bracelets-For-Women-925/32870861604.html?spm=a2g0s.8937460.0.0.1da22e0eWDpQLL' target='_blank'>Order Now</a>").appendTo($(this));
+        } else if (productAttr == "Blue Lapis") {
+          $("<a href='https://www.aliexpress.com/item/AMIU-3mm-Natural-Lapis-Stone-Beads-Tibetan-Stone-Beads-Stretch-Bracelet-For-Men-Women-Yoga-Chakra/32906197145.html?spm=2114.10010108.1000013.2.79f510b7zBI88e&gps-id=pcDetailBottomMoreThisSeller&scm=1007.13339.128551.0&scm_id=1007.13339.128551.0&scm-url=1007.13339.128551.0&pvid=bfe7bb3c-3d42-475a-a48e-502b3915133e' target='_blank'>Order Now</a>").appendTo($(this));
         } else {
-          $("<a href='https://www.aliexpress.com/item/Handmade-3mm-Natural-Lapis-lazuli-Stone-Red-Tiger-Eye-Beads-Bracelets-For-Men-Women-YOGA-Reiki/32872175234.html?spm=a2g0s.8937460.0.0.1da22e0eWDpQLL' target='_blank'>Order Now</a>").appendTo($(this));
+          
         }
+      } else if (product.includes("Reiki Prayer Stones Bracelet, Lapis Lazuli, Red Tigers Eye, Obsidian, Chakra Bracelets, Yoga Bracelets, Meditation Bracelet, Energy Bracelet")) {
+        $("<a href='https://www.aliexpress.com/item/Eastisan-3mm-Natural-Lapis-lazuli-Stone-Red-Tiger-Eye-Bracelets-For-Men-Women-Reiki-Prayer-Stones/32827579322.html?spm=2114.search0104.3.231.164d7e23Yap6aW&ws_ab_test=searchweb0_0,searchweb201602_9_10065_10068_10890_319_10546_10059_10884_317_10548_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_53,ppcSwitch_0&algo_expid=d9bf7109-e1ef-4048-9a22-6999747d4f1d-30&algo_pvid=d9bf7109-e1ef-4048-9a22-6999747d4f1d' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Tibetan Buddhist Ball Prayer Bead Bracelet')) {
         $("<a href='https://www.aliexpress.com/store/product/AMIU-Tibetan-Buddhist-Ball-Prayer-Bead-Lucky-Charm-Tibetan-Bracelets-Bangles-For-Women-Men-Handmade-Knots/1675041_32850472242.html?spm=a2g1y.12024536.productList_2428021.subject_2' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Buddha Amulet Bracelet')) {
@@ -214,7 +222,7 @@ function setButtons() {
         }, 1000);
       });
     });
-  }, 10000);
+  }, 5000);
 }
 
 function updateStatusClick() {
