@@ -116,9 +116,11 @@ function generateProductLink() {
           $("<a href='https://www.aliexpress.com/item/AMIU-7-Colors-Lucky-Chakra-Natural-Stone-Simple-Bracelet-Beads-Adjustable-Bracelet-Natural-Crystal-Bohemia-Prayer/32882245473.html?spm=a2g0s.9042311.0.0.ac394c4drN8ZjI' target='_blank'>Order Now</a>").appendTo($(this));
         }
       } else if (product.includes("108 Natural Sandalwood Prayer Beads Bracelet")) {
-        $("<a href='https://www.aliexpress.com/item/pulseras-108-beads-8mm-Natural-Sandalwood-Buddhist-Buddha-Wood-Prayer-Bead-Mala-Unisex-Men-bracelets-bangles/32746625331.html?spm=a2g0s.9042311.0.0.710a4c4dp16vHO' target='_blank'>Order Now</a>").appendTo($(this));
+        $("<a href='https://www.aliexpress.com/item/32846433152.html?spm=a2g0s.9042311.0.0.27424c4dXS02jI' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes("Om Pendant Necklace")) {
         $("<a href='https://www.aliexpress.com/item/32892673861.html?spm=a2g0s.8937460.0.0.46022e0eDOC0NC' target='_blank'>Order Now</a>").appendTo($(this));
+      } else if (product.includes("Phases of the Moon Ring")) {
+        $("<a href='https://www.aliexpress.com/item/32894248723.html?spm=a2g0s.8937460.0.0.7d072e0eiJN28U' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes("Wide Leg")) {
         $("<a href='https://www.aliexpress.com/item/32877941625.html?spm=a2g0o.productlist.0.0.1d7c5178ARcW4a&algo_pvid=c4334309-a41e-4e7d-910a-6c614d4cec41&algo_expid=c4334309-a41e-4e7d-910a-6c614d4cec41-0&btsid=91d6daaf-bf6a-497d-bf5e-78d6fedcbf0a&ws_ab_test=searchweb0_0,searchweb201602_9,searchweb201603_53' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes("Heart Sutra")) {
