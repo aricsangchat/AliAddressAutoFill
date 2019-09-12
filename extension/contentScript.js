@@ -29,7 +29,7 @@ if (window.location.host == "shoppingcart.aliexpress.com") {
 
     };
   });
-} else if (window.location.pathname == "/your/shops/me/advertising/promoted-listings") {
+} else if (window.location.pathname == "/your/shops/me/advertising") {
   setTimeout(function(){ 
     insertConversions();
   }, 5000);
@@ -117,7 +117,12 @@ function generateProductLink() {
         }
       } else if (product.includes("108 Natural Sandalwood Prayer Beads Bracelet")) {
         $("<a href='https://www.aliexpress.com/item/32846433152.html?spm=a2g0s.9042311.0.0.27424c4dXS02jI' target='_blank'>Order Now</a>").appendTo($(this));
-      } else if (product.includes("Om Pendant Necklace")) {
+      } else if (product.includes("Sacred Geometry Festival Shorts")) {
+        $("<a href='https://www.aliexpress.com/item/32785884762.html?spm=a2g0s.9042311.0.0.27424c4de77voq' target='_blank'>Order Now</a>").appendTo($(this));
+      } else if (product.includes("Tibetan Lucky Buddhist Sandalwood Bracelet")) {
+        $("<a href='https://www.aliexpress.com/item/32822348739.html?spm=a2g0o.detail.0.0.14661c94DvusaD&gps-id=pcDetailCartBuyAlsoBuy&scm=1007.12908.131037.0&scm_id=1007.12908.131037.0&scm-url=1007.12908.131037.0&pvid=71cdb6e9-d309-47e8-95b0-da50ace8ce0f' target='_blank'>Order Now</a>").appendTo($(this));
+      }
+       else if (product.includes("Om Pendant Necklace")) {
         $("<a href='https://www.aliexpress.com/item/32892673861.html?spm=a2g0s.8937460.0.0.46022e0eDOC0NC' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes("Phases of the Moon Ring")) {
         $("<a href='https://www.aliexpress.com/item/32894248723.html?spm=a2g0s.8937460.0.0.7d072e0eiJN28U' target='_blank'>Order Now</a>").appendTo($(this));
@@ -246,7 +251,7 @@ function setButtons() {
         }, 1000);
       });
     });
-  }, 5000);
+  }, 10000);
 }
 
 function updateStatusClick() {
@@ -258,30 +263,40 @@ function updateStatusClick() {
 function insertConversions() {
   let impressions;
   let clicks;
-  let percent;
-  let totalCost;
-  let totalOrders;
-  let costPerOrder;
-  let estimatedProfit;
-  let aquisitionPercent;
+  let orders;
+  let clickPercent;
+  let orderPercent;
+  let adCost;
+  let costPerSale;
+  let totalAdCost;
+  let totalSales;
+  let averageCostPerSale;
+  let arrIndex = 0;
+  let headerText = $("#header-message").text();
+  
 
-  $( ".listing-row" ).each(function( index ) {
-    console.log(index);
+  $( ".wt-table__row" ).each(function( index ) {
     if (index < 40 ) {
-      impressions = document.getElementsByClassName("impressions")[index].innerHTML;
-      clicks = document.getElementsByClassName("clicks")[index].innerHTML;
-      percent = clicks/impressions*100;
-
-      totalCost = parseFloat(document.getElementsByClassName("cost")[index].innerHTML.slice(1));
-      totalOrders = document.getElementsByClassName("orders")[index].innerHTML;
-      costPerOrder = totalCost/totalOrders;
-      aquisitionPercent = totalOrders/clicks * 100;
-
-      estimatedProfit = ( 10 - costPerOrder ) * totalOrders;
-
-      $( "<p>C %"+ percent.toFixed(2) +"</p>" ).appendTo(document.getElementsByClassName("clicks")[index]);
-      $( "<p>CPA $"+ costPerOrder.toFixed(2) +"</p>" ).appendTo(document.getElementsByClassName("orders")[index]);
-      $( "<p>A %"+ aquisitionPercent.toFixed(2) +"</p>" ).appendTo(document.getElementsByClassName("orders")[index]);
-      $( "<p>EP $"+ estimatedProfit.toFixed(2) +"</p>" ).appendTo(document.getElementsByClassName("revenue")[index]);    }
+      arrIndex++;
+      console.log(arrIndex);
+      impressions = parseFloat($("#listing-stats > div:nth-child(3) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(2) > span").text().replace(/,/g, ''));
+      clicks = parseFloat($("#listing-stats > div:nth-child(3) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(3) > span").text().replace(/,/g, ''));
+      orders = parseFloat($("#listing-stats > div:nth-child(3) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(4) > span").text().replace(/,/g, ''));
+      adCost = parseFloat($("#listing-stats > div:nth-child(3) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(6) > span").text().replace(/\$/g, ''));
+      estimatedProfit = ( 6 ) * orders;
+      totalAdCost = parseFloat($("#stats-view-footer > p > span > strong").text().replace(/\$/g, ''));
+      totalSales = parseFloat($("#stats-table > div:nth-child(3) > div.wt-pb-xs-2.wt-pb-lg-0.wt-pt-lg-2.wt-order-lg-2 > p").text());;
+      averageCostPerSale = totalAdCost/totalSales;
+      console.log(clicks, impressions, orders, adCost, totalAdCost, averageCostPerSale.toFixed(2));
+      clickPercent = clicks/impressions*100;
+      orderPercent = orders/clicks*100;
+      costPerSale = adCost/orders;
+      console.log(clickPercent, orderPercent);
+      
+      $("#listing-stats > div:nth-child(3) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(3) > span").after("<br /><span>"+ clickPercent.toFixed(2) +"%</span>");
+      $("#listing-stats > div:nth-child(3) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(4) > span").after("<br /><span>"+ orderPercent.toFixed(2) +"%</span>");
+      $("#listing-stats > div:nth-child(3) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(6) > span").after("<br /><span>$"+ costPerSale.toFixed(2) +"</span>");
+      $("#header-message").text(headerText + " with an average cost per sale of $" + averageCostPerSale.toFixed(2));    
+    }
   });
 }
