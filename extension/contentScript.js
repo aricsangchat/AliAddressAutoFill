@@ -31,7 +31,7 @@ if (window.location.host == "shoppingcart.aliexpress.com") {
   });
 } else if (window.location.pathname == "/your/shops/me/advertising") {
   setTimeout(function(){ 
-    insertConversions();
+    //insertConversions();
   }, 5000);
 } else if (window.location.host == "www.etsy.com") {
   setButtons();
@@ -117,6 +117,10 @@ function generateProductLink() {
         }
       } else if (product.includes("108 Natural Sandalwood Prayer Beads Bracelet")) {
         $("<a href='https://www.aliexpress.com/item/32846433152.html?spm=a2g0s.9042311.0.0.27424c4dXS02jI' target='_blank'>Order Now</a>").appendTo($(this));
+      } else if (product.includes("Tibetan Buddhist Copper Rope Knot Bracelet")) {
+        $("<a href='https://www.aliexpress.com/item/33037096285.html?spm=a2g0s.9042311.0.0.27424c4dshkZhI' target='_blank'>Order Now</a>").appendTo($(this));
+      } else if (product.includes("Tibetan Buddhist Bracelet, Copper Braided Bracelet, Yoga Bracelet, Meditation Bracelet, Prayer Bracelet, Mens & Womens Bracelet")) {
+        $("<a href='https://www.aliexpress.com/item/33038301881.html?spm=a2g0o.productlist.0.0.31897e23zzQZG8&algo_pvid=19e35463-6d6a-43c8-a385-ac3229e7a660&algo_expid=19e35463-6d6a-43c8-a385-ac3229e7a660-11&btsid=37fec1bb-873d-4451-b5af-cbe2fdf62464&ws_ab_test=searchweb0_0,searchweb201602_9,searchweb201603_53' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes("Sacred Geometry Festival Shorts")) {
         $("<a href='https://www.aliexpress.com/item/32785884762.html?spm=a2g0s.9042311.0.0.27424c4de77voq' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes("Tibetan Lucky Buddhist Sandalwood Bracelet")) {
@@ -251,7 +255,7 @@ function setButtons() {
         }, 1000);
       });
     });
-  }, 10000);
+  }, 5000);
 }
 
 function updateStatusClick() {
@@ -278,24 +282,23 @@ function insertConversions() {
   $( ".wt-table__row" ).each(function( index ) {
     if (index < 40 ) {
       arrIndex++;
-      console.log(arrIndex);
-      impressions = parseFloat($("#listing-stats > div:nth-child(3) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(2) > span").text().replace(/,/g, ''));
-      clicks = parseFloat($("#listing-stats > div:nth-child(3) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(3) > span").text().replace(/,/g, ''));
-      orders = parseFloat($("#listing-stats > div:nth-child(3) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(4) > span").text().replace(/,/g, ''));
-      adCost = parseFloat($("#listing-stats > div:nth-child(3) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(6) > span").text().replace(/\$/g, ''));
+      impressions = parseFloat($("#listing-stats > div:nth-child(4) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(2) > span").text().replace(/,/g, ''));
+      clicks = parseFloat($("#listing-stats > div:nth-child(4) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(3) > span").text().replace(/,/g, ''));
+      orders = parseFloat($("#listing-stats > div:nth-child(4) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(4) > span").text().replace(/,/g, ''));
+      adCost = parseFloat($("#listing-stats > div:nth-child(4) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(6) > span").text().replace(/\$/g, ''));
       estimatedProfit = ( 6 ) * orders;
       totalAdCost = parseFloat($("#stats-view-footer > p > span > strong").text().replace(/\$/g, ''));
       totalSales = parseFloat($("#stats-table > div:nth-child(3) > div.wt-pb-xs-2.wt-pb-lg-0.wt-pt-lg-2.wt-order-lg-2 > p").text());;
       averageCostPerSale = totalAdCost/totalSales;
-      console.log(clicks, impressions, orders, adCost, totalAdCost, averageCostPerSale.toFixed(2));
+      console.log(arrIndex,impressions,clicks, orders, adCost, totalAdCost, averageCostPerSale.toFixed(2));
       clickPercent = clicks/impressions*100;
       orderPercent = orders/clicks*100;
       costPerSale = adCost/orders;
       console.log(clickPercent, orderPercent);
-      
-      $("#listing-stats > div:nth-child(3) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(3) > span").after("<br /><span>"+ clickPercent.toFixed(2) +"%</span>");
-      $("#listing-stats > div:nth-child(3) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(4) > span").after("<br /><span>"+ orderPercent.toFixed(2) +"%</span>");
-      $("#listing-stats > div:nth-child(3) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(6) > span").after("<br /><span>$"+ costPerSale.toFixed(2) +"</span>");
+
+      $("#listing-stats > div:nth-child(4) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(3) > span").after("<br /><span>"+ clickPercent.toFixed(2) +"%</span>");
+      $("#listing-stats > div:nth-child(4) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(4) > span").after("<br /><span>"+ orderPercent.toFixed(2) +"%</span>");
+      $("#listing-stats > div:nth-child(4) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(6) > span").after("<br /><span>$"+ costPerSale.toFixed(2) +"</span>");
       $("#header-message").text(headerText + " with an average cost per sale of $" + averageCostPerSale.toFixed(2));    
     }
   });

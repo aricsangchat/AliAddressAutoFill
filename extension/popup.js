@@ -1,6 +1,7 @@
 let saveAddress = document.getElementById('saveAddress');
 let pasteAddress = document.getElementById('pasteAddress');
 let pasteMessage = document.getElementById('pasteMessage');
+let calcConversions = document.getElementById('conversions');
 
 let savedAddress = null;
 
@@ -11,6 +12,17 @@ chrome.storage.sync.get('address', function(result) {
     injectAddressInPopup(savedAddress);
   }
 });
+
+calcConversions.onclick = function(element) {
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.executeScript(
+      tabs[0].id,
+      {
+        file: 'calcConversion.js'
+      }
+    );
+  });
+}
 
 saveAddress.onclick = function(element) {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
