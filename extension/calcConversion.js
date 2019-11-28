@@ -42,7 +42,7 @@ function insertConversions() {
         clickPercent = clicks/impressions*100;
 
         if (orders === 0) {
-          costPerSale = 0;
+          costPerSale = adCost;
           orderPercent = 0;
         } else {
           costPerSale = adCost/orders;
