@@ -11,6 +11,7 @@ function insertConversions() {
     let averageCostPerSale;
     let arrIndex = 0;
     let headerText = $("#header-message").text();
+    let totalAdCostPerPage = 0;
     
   
     $( ".wt-table__row" ).each(function( index ) {
@@ -25,10 +26,10 @@ function insertConversions() {
         impressions = parseFloat($("#listing-stats > div:nth-child(4) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(2) > span").text().replace(/,/g, ''));
         clicks = parseFloat($("#listing-stats > div:nth-child(4) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(3) > span").text().replace(/,/g, ''));
         orders = parseFloat($("#listing-stats > div:nth-child(4) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(4) > span").text().replace(/,/g, ''));
-        adCost = parseFloat($("#listing-stats > div:nth-child(4) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(6) > span").text().replace(/\$/g, ''));
+        adCost = parseFloat($("#listing-stats > div:nth-child(4) > table > tbody > tr:nth-child("+arrIndex+") > td:nth-child(6) > span").text().replace(/[,\/$]/g, ''));
         //estimatedProfit = ( 6 ) * orders;
-        totalAdCost = parseFloat($("#stats-view-footer > p > span > strong").text().replace(/\$/g, ''));
-        totalSales = parseFloat($("#stats-table > div:nth-child(3) > div.wt-pb-xs-2.wt-pb-lg-0.wt-pt-lg-2.wt-order-lg-2 > p").text());;
+        totalAdCost = parseFloat($("#stats-view-footer > p > span > strong").text().replace(/[,\/$]/g, ''));
+        totalSales = parseFloat($("#stats-table > div:nth-child(3) > div.wt-pb-xs-2.wt-pb-lg-0.wt-pt-lg-2.wt-order-lg-2 > p").text().replace(/,/g, ''));
         averageCostPerSale = totalAdCost/totalSales;
         
         console.log(
@@ -38,6 +39,10 @@ function insertConversions() {
           "orders:", orders, 
           "adCost:", adCost
         );
+        let prevAdCost = totalAdCostPerPage;
+        totalAdCostPerPage = adCost + prevAdCost;
+
+
 
         clickPercent = clicks/impressions*100;
 
@@ -59,6 +64,8 @@ function insertConversions() {
       }
     });
   console.log("totalAdCost:", totalAdCost, "CPA:", averageCostPerSale.toFixed(2));
+  console.log("totalAdCostPerPage: ", totalAdCostPerPage);
+
   }
 
 insertConversions();

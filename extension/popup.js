@@ -2,6 +2,7 @@ let saveAddress = document.getElementById('saveAddress');
 let pasteAddress = document.getElementById('pasteAddress');
 let pasteMessage = document.getElementById('pasteMessage');
 let calcConversions = document.getElementById('conversions');
+let setButtons = document.getElementById('setButtons');
 
 let savedAddress = null;
 
@@ -12,6 +13,17 @@ chrome.storage.sync.get('address', function(result) {
     injectAddressInPopup(savedAddress);
   }
 });
+
+setButtons.onclick = function(element) {
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.executeScript(
+      tabs[0].id,
+      {
+        file: 'setButtons.js'
+      }
+    );
+  });
+}
 
 calcConversions.onclick = function(element) {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
