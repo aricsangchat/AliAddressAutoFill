@@ -233,7 +233,7 @@ function generateProductLink() {
       } else if (product.includes('Solar System Bracelet')) {
         $("<a href='https://www.aliexpress.com/item/4000389136794.html?spm=a2g0s.12269583.0.0.2cc66b28yuYAfA' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Cork Yoga Mat')) {
-        $("<a href='https://www.aliexpress.com/item/32994983188.html?spm=a2g0s.9042311.0.0.5c514c4d5wxwZb' target='_blank'>Order Now</a>").appendTo($(this));
+        $("<a href='https://www.aliexpress.com/item/4001166090433.html?spm=a2g0s.9042311.0.0.47bb4c4d3ifjZL' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Om Pendant Keychain')) {
         $("<a href='https://www.aliexpress.com/item/32894390859.html?spm=a2g0s.9042311.0.0.27424c4dPXnmHP' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Tibetan Bracelet, OM Mani Padme Hum, Meditation Bracelet, Mantra Bracelet, Buddhist Bracelet, Good Luck Bracelet, Protection Bracelet')) {
@@ -242,6 +242,12 @@ function generateProductLink() {
         $("<a href='https://www.aliexpress.com/item/4000356031565.html?spm=a2g0s.9042311.0.0.27424c4d4HAT3S' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('New Tibetan Rope Bracelets')) {
         $("<a href='https://www.aliexpress.com/item/32826062352.html?spm=a2g0o.store_home.productList_2538936.pic_0' target='_blank'>Order Now</a>").appendTo($(this));
+      } else if (product.includes('Reflective Pants')) {
+        $("<a href='https://www.aliexpress.com/item/33020673283.html?spm=a2g0s.9042311.0.0.27424c4d1wRO8B' target='_blank'>Order Now</a>").appendTo($(this));
+      } else if (product.includes('Reflective Shorts')) {
+        $("<a href='https://www.aliexpress.com/item/33021049519.html?spm=2114.12010612.8148356.1.5a7023adueZdMC' target='_blank'>Order Now</a>").appendTo($(this));
+      } else if (product.includes('Tibetan Bodhi Seed Bracelet')) {
+        $("<a href='https://www.aliexpress.com/item/4000433834178.html?spm=2114.12010612.0.0.1df72152TMdowM&gps-id=pcStoreJustForYou&scm=1007.23125.137358.0&scm_id=1007.23125.137358.0&scm-url=1007.23125.137358.0&pvid=064ee589-4bc8-436e-99d0-0bd2986054b4' target='_blank'>Order Now</a>").appendTo($(this));
       } else {
         
       }
