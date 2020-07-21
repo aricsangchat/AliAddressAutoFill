@@ -248,6 +248,8 @@ function generateProductLink() {
         $("<a href='https://www.aliexpress.com/item/33021049519.html?spm=2114.12010612.8148356.1.5a7023adueZdMC' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Tibetan Bodhi Seed Bracelet')) {
         $("<a href='https://www.aliexpress.com/item/4000433834178.html?spm=2114.12010612.0.0.1df72152TMdowM&gps-id=pcStoreJustForYou&scm=1007.23125.137358.0&scm_id=1007.23125.137358.0&scm-url=1007.23125.137358.0&pvid=064ee589-4bc8-436e-99d0-0bd2986054b4' target='_blank'>Order Now</a>").appendTo($(this));
+      } else if (product.includes('Pyramid Kit')) {
+        $("<a href='https://www.aliexpress.com/item/33004149321.html?spm=a2g0s.9042311.0.0.27424c4d3JV0Ok' target='_blank'>Order Now</a>").appendTo($(this));
       } else {
         
       }
