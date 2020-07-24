@@ -120,7 +120,7 @@ function generateProductLink() {
       } else if (product.includes("Tibetan Buddhist Copper Rope Knot Bracelet")) {
         $("<a href='https://www.aliexpress.com/item/33037096285.html?spm=a2g0s.9042311.0.0.27424c4dshkZhI' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes("Tibetan Buddhist Bracelet, Small Bead Braided Bracelet, Yoga Bracelet, Meditation Bracelet, Prayer Bracelet, Mens & Womens Bracelet")) {
-        $("<a href='https://www.aliexpress.com/item/33038301881.html?spm=a2g0o.productlist.0.0.31897e23zzQZG8&algo_pvid=19e35463-6d6a-43c8-a385-ac3229e7a660&algo_expid=19e35463-6d6a-43c8-a385-ac3229e7a660-11&btsid=37fec1bb-873d-4451-b5af-cbe2fdf62464&ws_ab_test=searchweb0_0,searchweb201602_9,searchweb201603_53' target='_blank'>Order Now</a>").appendTo($(this));
+        $("<a href='https://www.aliexpress.com/item/4001165376118.html?spm=a2g0o.store_home.productList_2424804.pic_3' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes("Sacred Geometry Festival Shorts")) {
         $("<a href='https://www.aliexpress.com/item/32785884762.html?spm=a2g0s.9042311.0.0.27424c4de77voq' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes("Tibetan Lucky Buddhist Sandalwood Bracelet")) {
@@ -233,7 +233,11 @@ function generateProductLink() {
       } else if (product.includes('Solar System Bracelet')) {
         $("<a href='https://www.aliexpress.com/item/4000389136794.html?spm=a2g0s.12269583.0.0.2cc66b28yuYAfA' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Cork Yoga Mat')) {
-        $("<a href='https://www.aliexpress.com/item/4001166090433.html?spm=a2g0s.9042311.0.0.47bb4c4d3ifjZL' target='_blank'>Order Now</a>").appendTo($(this));
+        if (productAttr == 'Chakra') {
+          $("<a href='https://www.aliexpress.com/item/4001222848171.html' target='_blank'>Order Now</a>").appendTo($(this));
+        } else {
+          $("<a href='https://www.aliexpress.com/item/4001013704521.html' target='_blank'>Order Now</a>").appendTo($(this));
+        }
       } else if (product.includes('Om Pendant Keychain')) {
         $("<a href='https://www.aliexpress.com/item/32894390859.html?spm=a2g0s.9042311.0.0.27424c4dPXnmHP' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Tibetan Bracelet, OM Mani Padme Hum, Meditation Bracelet, Mantra Bracelet, Buddhist Bracelet, Good Luck Bracelet, Protection Bracelet')) {
@@ -248,6 +252,8 @@ function generateProductLink() {
         $("<a href='https://www.aliexpress.com/item/33021049519.html?spm=2114.12010612.8148356.1.5a7023adueZdMC' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Tibetan Bodhi Seed Bracelet')) {
         $("<a href='https://www.aliexpress.com/item/4000433834178.html?spm=2114.12010612.0.0.1df72152TMdowM&gps-id=pcStoreJustForYou&scm=1007.23125.137358.0&scm_id=1007.23125.137358.0&scm-url=1007.23125.137358.0&pvid=064ee589-4bc8-436e-99d0-0bd2986054b4' target='_blank'>Order Now</a>").appendTo($(this));
+      } else if (product.includes('Ganesh Meditation')) {
+        $("<a href='https://www.aliexpress.com/item/32868683308.html?spm=a2g0s.9042311.0.0.27424c4d0Gj9by' target='_blank'>Order Now</a>").appendTo($(this));
       } else {
         
       }
