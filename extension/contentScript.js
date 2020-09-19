@@ -50,11 +50,16 @@ function injectAddressInPopup(addressObject) {
 }
 
 function getAddress() {
+  const removeSpecialCharacters = (str) => {
+    let string = str.replace(/[^a-zA-Z0-9 ]/g, '');
+    string = string.toUpperCase();
+    return string;
+  } 
   let address = {
-      name: document.getElementsByClassName("name").length >= 1 ? document.getElementsByClassName("name")[0].innerHTML.toUpperCase() : '',
-      firstLine: document.getElementsByClassName("first-line").length >= 1 ? document.getElementsByClassName("first-line")[0].innerHTML.toUpperCase() : '',
-      secondLine: document.getElementsByClassName("second-line").length >= 1 ? document.getElementsByClassName("second-line")[0].innerHTML.toUpperCase() : '',
-      city: document.getElementsByClassName("city").length >= 1 ? document.getElementsByClassName("city")[0].innerHTML.toUpperCase() : '',
+      name: document.getElementsByClassName("name").length >= 1 ? removeSpecialCharacters(document.getElementsByClassName("name")[0].innerHTML) : '',
+      firstLine: document.getElementsByClassName("first-line").length >= 1 ? removeSpecialCharacters(document.getElementsByClassName("first-line")[0].innerHTML) : '',
+      secondLine: document.getElementsByClassName("second-line").length >= 1 ? removeSpecialCharacters(document.getElementsByClassName("second-line")[0].innerHTML) : '',
+      city: document.getElementsByClassName("city").length >= 1 ? removeSpecialCharacters(document.getElementsByClassName("city")[0].innerHTML) : '',
       state: document.getElementsByClassName("state").length >= 1 ? document.getElementsByClassName("state")[0].innerHTML.toUpperCase() : document.getElementsByClassName("country-name")[0].innerHTML.toUpperCase(),
       zip: document.getElementsByClassName("zip").length >= 1 ? document.getElementsByClassName("zip")[0].innerHTML.toUpperCase() : '',
       country: document.getElementsByClassName("country-name").length >= 1 ? document.getElementsByClassName("country-name")[0].innerHTML.toUpperCase() : ''
@@ -117,6 +122,18 @@ function generateProductLink() {
         }
       } else if (product.includes("108 Natural Sandalwood Prayer Beads Bracelet")) {
         $("<a href='https://www.aliexpress.com/item/32846433152.html?spm=a2g0s.9042311.0.0.27424c4dXS02jI' target='_blank'>Order Now</a>").appendTo($(this));
+        // handle product attribute
+        if (productAttr == 'White') {
+          $("<p id='productAttr'>Attr: 1</p>").appendTo($(this));
+        } else if (productAttr == 'Black') {
+          $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
+        } else if (productAttr == 'Brown') {
+          $("<p id='productAttr'>Attr: 3</p>").appendTo($(this));
+        } else if (productAttr == 'Green') {
+          $("<p id='productAttr'>Attr: 4</p>").appendTo($(this));
+        } else if (productAttr == 'Red') {
+          $("<p id='productAttr'>Attr: 5</p>").appendTo($(this));
+        }
       } else if (product.includes("Tibetan Buddhist Copper Rope Knot Bracelet")) {
         $("<a href='https://www.aliexpress.com/item/33037096285.html?spm=a2g0s.9042311.0.0.27424c4dshkZhI' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes("Tibetan Buddhist Bracelet, Small Bead Braided Bracelet, Yoga Bracelet, Meditation Bracelet, Prayer Bracelet, Mens & Womens Bracelet")) {
@@ -175,7 +192,14 @@ function generateProductLink() {
           $("<a href='https://www.aliexpress.com/item/Tibetan-Buddhist-Handmade-Lucky-Rope-Bracelet-Men-Tibetan-Buddhist-Knots-Size-Adjustable-Bracelet-For-Women/32868578644.html?spm=a2g0s.8937460.0.0.46d92e0euFJBXc' target='_blank'>Order Now</a>").appendTo($(this));
         } else {
           $("<a href='https://www.aliexpress.com/item/2017-AMIU-Handmade-Friendship-Bracelet-Hippy-Colorful-Love-Vintage-Lucky-Charm-Tibetan-Bracelets-Bangles-For-Women/32826062352.html?spm=a2g0s.9042311.0.0.41904c4dWHBVcD' target='_blank'>Order Now</a>").appendTo($(this));
-        } 
+        }
+        if (productAttr == 'Multi Colored') {
+          $("<p id='productAttr'>Attr: 1</p>").appendTo($(this));
+        } else if (productAttr == 'Green') {
+          $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
+        } else if (productAttr == 'Green') {
+          $("<p id='productAttr'>Attr: 3</p>").appendTo($(this));
+        }
       } else if (product.includes('Happiness Tibetan')) {
         $("<a href='https://www.aliexpress.com/item/Eastisan-Tibetan-Buddhist-Handmade-Knots-Lucky-Rope-Bracelets-For-Women-Men-Buddhism-braided-Jewelry-Multi-Colors/32824972197.html?spm=2114.search0104.3.209.1fbf7e2357Ch3M&ws_ab_test=searchweb0_0,searchweb201602_9_10065_10068_10890_319_10546_10059_10884_317_10548_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_52,ppcSwitch_0&algo_expid=104449a6-8c6e-49f9-be90-bb97ee606e81-27&algo_pvid=104449a6-8c6e-49f9-be90-bb97ee606e81' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product == 'Tibetan Lucky Rope Knots Braided Bracelet | Colorful Braided Bracelet | Yoga Bracelet Meditation Bracelet Bracelet for Women Gift for Her') {
@@ -193,13 +217,21 @@ function generateProductLink() {
       } else if (product.includes('Meditating Astronaut Necklace')) {
         if (productAttr == 'Silver') {
           $("<a href='https://www.aliexpress.com/item/Astronaut-Pendant-Necklace-Galaxy-Universe-Spaceman-Meditation-Trinket-Retro-Stainless-Steel-Chain-Men-Necklace/32847446862.html?spm=a2g0s.8937460.0.0.34892e0eQSvGJu' target='_blank'>Order Now</a>").appendTo($(this));
+          $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
         } else if (productAttr == 'Black') {
           $("<a href='https://www.aliexpress.com/item/Black-Color-Astronaut-Necklace-Universe-Spaceman-Pendant-Stainless-Steel-Chain-Men-Rock-Party-Novelty-Space-Jewelry/32853858506.html?spm=a2g0s.8937460.0.0.34892e0eQSvGJu' target='_blank'>Order Now</a>").appendTo($(this));
         } else if (productAttr == 'Gold') {
           $("<a href='https://www.aliexpress.com/item/Gold-Color-Astronaut-Pendant-Necklace-Universe-Spaceman-Stainless-Steel-Chain-Necklace-for-Unisex-Couple-Outer-Space/32854959741.html?spm=2114.10010108.1000013.11.17dc155cjvwv1l&gps-id=pcDetailBottomMoreThisSeller&scm=1007.13339.128551.0&scm_id=1007.13339.128551.0&scm-url=1007.13339.128551.0&pvid=8678ad3d-c40a-489f-a1aa-2ef9e4c3439c' target='_blank'>Order Now</a>").appendTo($(this));
         }
-      } else if (product.includes('Meditating Astronaut 9')) {
+      } else if (product.includes('Meditating Astronaut 9 Planet Necklace')) {
         $("<a href='https://www.aliexpress.com/item/Astronaut-Pendant-9-Planets-Solar-System-Necklace-Stars-Rock-Lava-Stones-Galaxy-Women-Novelty-Outer-Spaceman/32854515246.html?spm=a2g0s.8937460.0.0.653b2e0ePobzrF' target='_blank'>Order Now</a>").appendTo($(this));
+        if (productAttr == 'Gold') {
+          $("<p id='productAttr'>Attr: 1</p>").appendTo($(this));
+        } else if (productAttr == 'Silver') {
+          $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
+        } else if (productAttr == 'Black') {
+          $("<p id='productAttr'>Attr: 3</p>").appendTo($(this));
+        }
       } else if (product.includes('Spaceman Astronaut Key Chain')) {
         $("<a href='https://www.aliexpress.com/item/new-arrival-high-quality-asimo-3D-key-chain-spaceman-keychain-robot-key-ring-key-holder-drop/32702161349.html?spm=a2g0s.8937460.0.0.329d2e0eJa4Bah' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('The Heart of Prajna Paramita Sutra Bangle')) {
@@ -212,12 +244,19 @@ function generateProductLink() {
         $("<a href='https://www.aliexpress.com/item/RUNMEIFA-Women-Polyester-Pashmina-Elegant-Fashion-Print-Floral-Paisley-Shawl-Wrap-Scarf-2018-New-Style-Free/32674410197.html?spm=a2g0s.9042311.0.0.27424c4dcEbF3N' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes("Tibetan Lucky Rope Knot Bracelet, Braided Bracelet, Yoga Bracelet, Meditation Bracelet, Prayer Bracelet, Mens & Womens Bracelet")) {
         $("<a href='https://www.aliexpress.com/store/product/AMIU-Handmade-Tibetan-Copper-Bead-Lucky-Rope-Bracelet-Bangles-For-Women-Men-Wax-Thread-Bracelets/1675041_32917757543.html?gps-id=6791677&scm=1007.14677.110221.0&scm_id=1007.14677.110221.0&scm-url=1007.14677.110221.0&pvid=833bd170-8625-4c9e-8d53-6027c8e88b9d&spm=a2g1y.promotion-20181111.promoteWysiwyg_134459388.0' target='_blank'>Order Now</a>").appendTo($(this));
+        if (productAttr == 'Red') {
+          $("<p id='productAttr'>Attr: 1</p>").appendTo($(this));
+        } else if (productAttr == 'Green') {
+          $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
+        }
       } else if (product.includes("Kumihimo Braided Yoga Bracelet")) {
         $("<a href='https://www.aliexpress.com/item/AMIU-Tibetan-Buddhist-Lucky-Charm-Tibetan-Bracelets-Bangles-For-Women-Men-Handmade-Knots-Deongare-Rope-Wish/32892555120.html?spm=a2g0s.8937460.0.0.41b62e0egh8WWh' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Buddha Meditation 7 Colors 3d Night Light Lamp')) {
         $("<a href='https://www.aliexpress.com/item/Buddha-7-Color-Changing-Night-Light-3D-LED-Atmosphere-Bulbing-Lamp-Heart-visual-illusion-for-Kids/32839459325.html?spm=a2g0s.8937460.0.0.4bf82e0eU18vlv' target='_blank'>Order Now</a>").appendTo($(this));
+        $("<p id='productAttr'>Attr: 3</p>").appendTo($(this));
       } else if (product.includes('Meditating Astronaut Key Chain')) {
         $("<a href='https://www.aliexpress.com/item/Astronaut-Keychain-Galaxy-Universe-Meditation-Spaceman-Key-Chains-Stainless-Steel-Rings-Chains-Personalised-Creative-Car-Keyring/32847580314.html?spm=a2g0s.8937460.0.0.3e2b2e0eOCNcGf' target='_blank'>Order Now</a>").appendTo($(this));
+        $("<p id='productAttr'>Attr: 0</p>").appendTo($(this));
       } else if (product.includes('Tibetan Buddhist Charm Bracelet, Lucky Rope Knot Bracelet, Yoga Bracelet, Meditation Bracelet, Prayer Bracelet')) {
         $("<a href='https://www.aliexpress.com/store/product/AMIU-Tibetan-Buddhist-Ball-Prayer-Bead-Lucky-Charm-Tibetan-Bracelets-Bangles-For-Women-Men-Handmade-Knots/1675041_32850472242.html?spm=a2g1y.12024536.productList_2428021.pic_2' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Buckminsterfullerene Molecule')) {
@@ -230,14 +269,23 @@ function generateProductLink() {
         $("<a href='https://www.aliexpress.com/item/Scarf-Luxury-Brand-Hot-Sale-Women-200-70cm-Oversize-Cotton-Scarf-Smooth-Touch-Scarves-Chic-Plant/32719142379.html?spm=2114.10010108.1000013.30.7f6b4fbcVaRqT7&gps-id=pcDetailBottomMoreThisSeller&scm=1007.13339.128551.0&scm_id=1007.13339.128551.0&scm-url=1007.13339.128551.0&pvid=c10d9095-158f-4891-b5e5-f03738282111' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Violet Purple Paisley')) {
         $("<a href='https://www.aliexpress.com/item/DANKEYISI-Ethnic-Winter-Women-Scarf-Jacquard-Scarves-Floral-Print-Shawls-Ladies-Long-Pashminas-Fashion-Stole-Indian/32840324322.html?spm=a2g0s.9042311.0.0.27424c4dvrgnhV' target='_blank'>Order Now</a>").appendTo($(this));
+        $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
       } else if (product.includes('Solar System Bracelet')) {
         $("<a href='https://www.aliexpress.com/item/4000389136794.html?spm=a2g0s.12269583.0.0.2cc66b28yuYAfA' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Cork Yoga Mat')) {
+        $("<a href='https://www.aliexpress.com/item/32933570357.html' target='_blank'>Order Now</a>").appendTo($(this));
         if (productAttr == 'Chakra') {
-          $("<a href='https://www.aliexpress.com/item/4001222848171.html' target='_blank'>Order Now</a>").appendTo($(this));
+          $("<p id='productAttr'>Attr: 1</p>").appendTo($(this));
+        } else if (productAttr == 'Guide Lines') {
+          $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
         } else {
-          $("<a href='https://www.aliexpress.com/item/4001013704521.html' target='_blank'>Order Now</a>").appendTo($(this));
+          $("<p id='productAttr'>Attr: 3</p>").appendTo($(this));
         }
+        // Ships From USA
+        $("<p id='shipsFrom'>Ships From: 2</p>").appendTo($(this));
+
+      } else if (product.includes('Elephant Pattern Summer Scarf, Shawl, Wrap, Elephant Gift, Oversize Scarf, Light Weight')) {
+        $("<a href='https://www.aliexpress.com/item/32869470098.html' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Om Pendant Keychain')) {
         $("<a href='https://www.aliexpress.com/item/32894390859.html?spm=a2g0s.9042311.0.0.27424c4dPXnmHP' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Tibetan Bracelet, OM Mani Padme Hum, Meditation Bracelet, Mantra Bracelet, Buddhist Bracelet, Good Luck Bracelet, Protection Bracelet')) {
@@ -248,6 +296,17 @@ function generateProductLink() {
         $("<a href='https://www.aliexpress.com/item/32826062352.html?spm=a2g0o.store_home.productList_2538936.pic_0' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Reflective Pants')) {
         $("<a href='https://www.aliexpress.com/item/33020673283.html?spm=a2g0s.9042311.0.0.27424c4d1wRO8B' target='_blank'>Order Now</a>").appendTo($(this));
+        if (productAttr == 'M') {
+          $("<p id='productAttr'>Attr: 1</p>").appendTo($(this));
+        } else if (productAttr == 'L') {
+          $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
+        } else if (productAttr == 'XL') {
+          $("<p id='productAttr'>Attr: 3</p>").appendTo($(this));
+        } else if (productAttr == 'XXL') {
+          $("<p id='productAttr'>Attr: 4</p>").appendTo($(this));
+        } else if (productAttr == 'XXXL') {
+          $("<p id='productAttr'>Attr: 5</p>").appendTo($(this));
+        }
       } else if (product.includes('Reflective Shorts')) {
         $("<a href='https://www.aliexpress.com/item/33021049519.html?spm=2114.12010612.8148356.1.5a7023adueZdMC' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Tibetan Bodhi Seed Bracelet')) {
@@ -256,6 +315,25 @@ function generateProductLink() {
         $("<a href='https://www.aliexpress.com/item/32868683308.html?spm=a2g0s.9042311.0.0.27424c4d0Gj9by' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Pyramid Kit')) {
         $("<a href='https://www.aliexpress.com/item/33004149321.html?spm=a2g0s.9042311.0.0.27424c4d3JV0Ok' target='_blank'>Order Now</a>").appendTo($(this));
+      } else if (product.includes('Tibetan Buddhist Coconut Shell Bracelet, Buddhist Charm Bracelet, Lucky Bracelet, OM Mani Padme Hum, Meditation Bracelet, Mens Bracelet')) {
+        $("<a href='https://www.aliexpress.com/item/32976734246.html' target='_blank'>Order Now</a>").appendTo($(this));
+        // Handle Attribute
+        if (productAttr == '14cm' || productAttr == '15cm') {
+          $("<p id='productAttr'>Attr: 1</p>").appendTo($(this));
+        } else if (productAttr == '16cm' || productAttr == '17cm') {
+          $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
+        } else {
+          $("<p id='productAttr'>Attr: 3</p>").appendTo($(this));
+        }
+      } else if (product.includes('Tibetan Buddhist Coconut Shell Braided Bracelet, Buddha Charm Bracelet, Lucky Bracelet, OM Mani Padme Hum, Meditation Bracelet, Men Bracelet')) {
+        $("<a href='https://www.aliexpress.com/item/32969925782.html' target='_blank'>Order Now</a>").appendTo($(this));
+        if (productAttr == '15 - 16 cm') {
+          $("<p id='productAttr'>Attr: 1</p>").appendTo($(this));
+        } else if (productAttr == '17 - 18 cm') {
+          $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
+        } else {
+          $("<p id='productAttr'>Attr: 3</p>").appendTo($(this));
+        }
       } else {
         
       }
@@ -285,7 +363,33 @@ function setButtons() {
 }
 
 function updateStatusClick() {
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > div > div.col-md-4.pr-md-0 > div > div > div > div > ul > li:nth-child(1) > span').click(function() {
+    console.log('first child')
+    setButtons();
+  });
   $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > div > div.col-md-4.pr-md-0 > div > div > div > div > ul > li:nth-child(2) > span').click(function() {
+    console.log('second child')
+
+    setButtons();
+  });
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > div > div.col-md-4.pr-md-0 > div > div > div > div > ul > li:nth-child(3) > span').click(function() {
+    console.log('third child')
+
+    setButtons();
+  });
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > div > div.col-md-4.pr-md-0 > div > div > div > div > ul > li:nth-child(4) > span').click(function() {
+    console.log('fourth child')
+
+    setButtons();
+  });
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > div > div.col-md-4.pr-md-0 > div > div > div > div > ul > li:nth-child(5) > span').click(function() {
+    console.log('fifith child')
+
+    setButtons();
+  });
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > div > div.col-md-4.pr-md-0 > div > div > div > div > ul > li:nth-child(6) > span').click(function() {
+    console.log('six child')
+
     setButtons();
   });
 }
