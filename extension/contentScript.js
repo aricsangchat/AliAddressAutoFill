@@ -140,6 +140,18 @@ function generateProductLink() {
         $("<a href='https://www.aliexpress.com/item/4001165376118.html?spm=a2g0o.store_home.productList_2424804.pic_3' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes("Sacred Geometry Festival Shorts")) {
         $("<a href='https://www.aliexpress.com/item/32785884762.html?spm=a2g0s.9042311.0.0.27424c4de77voq' target='_blank'>Order Now</a>").appendTo($(this));
+        if (productAttr == 'M (28 - 29) In.') {
+          $("<p id='productAttr'>Attr: 1</p>").appendTo($(this));
+        } else if (productAttr == 'L (30-31) In.') {
+          $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
+        } else if (productAttr == 'XL (31-32) In.') {
+          $("<p id='productAttr'>Attr: 3</p>").appendTo($(this));
+        } else if (productAttr == 'XXL (32-33) In.') {
+          $("<p id='productAttr'>Attr: 4</p>").appendTo($(this));
+        } else if (productAttr == '3XL (34-36) In.') {
+          $("<p id='productAttr'>Attr: 5</p>").appendTo($(this));
+        }
+        $("<p id='style'>Style: 1</p>").appendTo($(this));
       } else if (product.includes("Tibetan Lucky Buddhist Sandalwood Bracelet")) {
         $("<a href='https://www.aliexpress.com/item/32822348739.html?spm=a2g0o.detail.0.0.14661c94DvusaD&gps-id=pcDetailCartBuyAlsoBuy&scm=1007.12908.131037.0&scm_id=1007.12908.131037.0&scm-url=1007.12908.131037.0&pvid=71cdb6e9-d309-47e8-95b0-da50ace8ce0f' target='_blank'>Order Now</a>").appendTo($(this));
       }
@@ -240,6 +252,7 @@ function generateProductLink() {
         $("<a href='https://www.aliexpress.com/item/Eastisan-Natural-Red-Sander-Wooden-Beads-Bracelets-Tibetan-Buddhist-Handmade-Meditation-Prayer-Bracelet-Men-Women-OM/32821464677.html?spm=2114.search0104.3.87.7b537e23w9A2iy&ws_ab_test=searchweb0_0,searchweb201602_9_10065_10068_10890_319_10546_10059_10884_317_10548_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_53,ppcSwitch_0&algo_expid=383f3f31-707d-4906-89b1-aadd244fd20b-11&algo_pvid=383f3f31-707d-4906-89b1-aadd244fd20b' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Chakra Meditation 7 Colors 3d Night Light Lamp')) {
         $("<a href='https://www.aliexpress.com/item/3D-7-Color-Changing-Yoga-LED-Meditation-of-Acrylic-Night-Light-Bedroom-Illusion-Lamp-livingroom-Bedside/32840799118.html?spm=a2g0s.9042311.0.0.b5464c4dZnhXGz' target='_blank'>Order Now</a>").appendTo($(this));
+        $("<p id='productAttr'>Attr: 4</p>").appendTo($(this));
       } else if (product.includes("Gold Paisley")) {
         $("<a href='https://www.aliexpress.com/item/RUNMEIFA-Women-Polyester-Pashmina-Elegant-Fashion-Print-Floral-Paisley-Shawl-Wrap-Scarf-2018-New-Style-Free/32674410197.html?spm=a2g0s.9042311.0.0.27424c4dcEbF3N' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes("Tibetan Lucky Rope Knot Bracelet, Braided Bracelet, Yoga Bracelet, Meditation Bracelet, Prayer Bracelet, Mens & Womens Bracelet")) {
@@ -275,11 +288,11 @@ function generateProductLink() {
       } else if (product.includes('Cork Yoga Mat')) {
         $("<a href='https://www.aliexpress.com/item/32933570357.html' target='_blank'>Order Now</a>").appendTo($(this));
         if (productAttr == 'Chakra') {
-          $("<p id='productAttr'>Attr: 1</p>").appendTo($(this));
+          $("<p id='style'>Style: 1</p>").appendTo($(this));
         } else if (productAttr == 'Guide Lines') {
-          $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
+          $("<p id='style'>Style: 2</p>").appendTo($(this));
         } else {
-          $("<p id='productAttr'>Attr: 3</p>").appendTo($(this));
+          $("<p id='style'>Style: 3</p>").appendTo($(this));
         }
         // Ships From USA
         $("<p id='shipsFrom'>Ships From: 2</p>").appendTo($(this));
@@ -309,6 +322,17 @@ function generateProductLink() {
         }
       } else if (product.includes('Reflective Shorts')) {
         $("<a href='https://www.aliexpress.com/item/33021049519.html?spm=2114.12010612.8148356.1.5a7023adueZdMC' target='_blank'>Order Now</a>").appendTo($(this));
+        if (productAttr == 'M') {
+          $("<p id='productAttr'>Attr: 1</p>").appendTo($(this));
+        } else if (productAttr == 'L') {
+          $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
+        } else if (productAttr == 'XL') {
+          $("<p id='productAttr'>Attr: 3</p>").appendTo($(this));
+        } else if (productAttr == 'XXL') {
+          $("<p id='productAttr'>Attr: 4</p>").appendTo($(this));
+        } else if (productAttr == 'XXXL') {
+          $("<p id='productAttr'>Attr: 5</p>").appendTo($(this));
+        }
       } else if (product.includes('Tibetan Bodhi Seed Bracelet')) {
         $("<a href='https://www.aliexpress.com/item/4000433834178.html?spm=2114.12010612.0.0.1df72152TMdowM&gps-id=pcStoreJustForYou&scm=1007.23125.137358.0&scm_id=1007.23125.137358.0&scm-url=1007.23125.137358.0&pvid=064ee589-4bc8-436e-99d0-0bd2986054b4' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Ganesh Meditation')) {
@@ -363,33 +387,29 @@ function setButtons() {
 }
 
 function updateStatusClick() {
-  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > div > div.col-md-4.pr-md-0 > div > div > div > div > ul > li:nth-child(1) > span').click(function() {
+  console.log('updateStatusClick')
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > div > div.col-xs-12.col-sm-6.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > div > div > div > div > ul > li:nth-child(1) > span').click(function() {
     console.log('first child')
     setButtons();
   });
-  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > div > div.col-md-4.pr-md-0 > div > div > div > div > ul > li:nth-child(2) > span').click(function() {
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > div > div.col-xs-12.col-sm-6.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > div > div > div > div > ul > li:nth-child(2) > span').click(function() {
     console.log('second child')
-
     setButtons();
   });
-  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > div > div.col-md-4.pr-md-0 > div > div > div > div > ul > li:nth-child(3) > span').click(function() {
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > div > div.col-xs-12.col-sm-6.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > div > div > div > div > ul > li:nth-child(3) > span').click(function() {
     console.log('third child')
-
     setButtons();
   });
-  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > div > div.col-md-4.pr-md-0 > div > div > div > div > ul > li:nth-child(4) > span').click(function() {
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > div > div.col-xs-12.col-sm-6.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > div > div > div > div > ul > li:nth-child(4) > span').click(function() {
     console.log('fourth child')
-
     setButtons();
   });
-  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > div > div.col-md-4.pr-md-0 > div > div > div > div > ul > li:nth-child(5) > span').click(function() {
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > div > div.col-xs-12.col-sm-6.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > div > div > div > div > ul > li:nth-child(5) > span').click(function() {
     console.log('fifith child')
-
     setButtons();
   });
-  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > div > div.col-md-4.pr-md-0 > div > div > div > div > ul > li:nth-child(6) > span').click(function() {
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > div > div.col-xs-12.col-sm-6.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > div > div > div > div > ul > li:nth-child(6) > span').click(function() {
     console.log('six child')
-
     setButtons();
   });
 }
