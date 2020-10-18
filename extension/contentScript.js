@@ -305,6 +305,17 @@ function generateProductLink() {
         $("<a href='https://www.aliexpress.com/item/4000188842189.html?spm=a2g0s.9042311.0.0.27424c4dy37RXI' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Reflective Windbreaker')) {
         $("<a href='https://www.aliexpress.com/item/4000356031565.html?spm=a2g0s.9042311.0.0.27424c4d4HAT3S' target='_blank'>Order Now</a>").appendTo($(this));
+        if (productAttr == 'M') {
+          $("<p id='productAttr'>Attr: 1</p>").appendTo($(this));
+        } else if (productAttr == 'L') {
+          $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
+        } else if (productAttr == 'XL') {
+          $("<p id='productAttr'>Attr: 3</p>").appendTo($(this));
+        } else if (productAttr == 'XXL') {
+          $("<p id='productAttr'>Attr: 4</p>").appendTo($(this));
+        } else if (productAttr == 'XXXL') {
+          $("<p id='productAttr'>Attr: 5</p>").appendTo($(this));
+        }
       } else if (product.includes('New Tibetan Rope Bracelets')) {
         $("<a href='https://www.aliexpress.com/item/32826062352.html?spm=a2g0o.store_home.productList_2538936.pic_0' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Reflective Pants')) {
