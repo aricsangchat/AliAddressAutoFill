@@ -204,6 +204,21 @@ function generateProductLink() {
           $("<a href='https://www.aliexpress.com/item/Tibetan-Buddhist-Handmade-Lucky-Rope-Bracelet-Men-Tibetan-Buddhist-Knots-Size-Adjustable-Bracelet-For-Women/32868578644.html?spm=a2g0s.8937460.0.0.46d92e0euFJBXc' target='_blank'>Order Now</a>").appendTo($(this));
         } else {
           $("<a href='https://www.aliexpress.com/item/2017-AMIU-Handmade-Friendship-Bracelet-Hippy-Colorful-Love-Vintage-Lucky-Charm-Tibetan-Bracelets-Bangles-For-Women/32826062352.html?spm=a2g0s.9042311.0.0.41904c4dWHBVcD' target='_blank'>Order Now</a>").appendTo($(this));
+          if (productAttr == 'Bright Red') {
+            $("<p id='productAttr'>Attr: 1</p>").appendTo($(this));
+          } else if (productAttr == 'Dark Red') {
+            $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
+          } else if (productAttr == 'Multi Color') {
+            $("<p id='productAttr'>Attr: 3</p>").appendTo($(this));
+          } else if (productAttr == 'White') {
+            $("<p id='productAttr'>Attr: 4</p>").appendTo($(this));
+          } else if (productAttr == 'Black') {
+            $("<p id='productAttr'>Attr: 5</p>").appendTo($(this));
+          } else if (productAttr == 'Green') {
+            $("<p id='productAttr'>Attr: 6</p>").appendTo($(this));
+          } else if (productAttr == 'Blue') {
+            $("<p id='productAttr'>Attr: 10</p>").appendTo($(this));
+          }
         }
         if (productAttr == 'Multi Colored') {
           $("<p id='productAttr'>Attr: 1</p>").appendTo($(this));
@@ -401,27 +416,28 @@ function setButtons() {
 
 function updateStatusClick() {
   console.log('updateStatusClick')
-  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.col-xs-12.col-sm-6.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > div > ul > li:nth-child(1) > span').click(function() {
+
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > button:nth-child(1)').click(function() {
     console.log('first child')
     setButtons();
   });
-  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.col-xs-12.col-sm-6.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > div > ul > li:nth-child(2) > span').click(function() {
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > button:nth-child(2)').click(function() {
     console.log('second child')
     setButtons();
   });
-  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.col-xs-12.col-sm-6.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > div > ul > li:nth-child(3) > span').click(function() {
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > button:nth-child(3)').click(function() {
     console.log('third child')
     setButtons();
   });
-  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.col-xs-12.col-sm-6.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > div > ul > li:nth-child(4) > span').click(function() {
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > button:nth-child(4)').click(function() {
     console.log('fourth child')
     setButtons();
   });
-  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.col-xs-12.col-sm-6.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > div > ul > li:nth-child(5) > span').click(function() {
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > button:nth-child(5)').click(function() {
     console.log('fifith child')
     setButtons();
   });
-  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.col-xs-12.col-sm-6.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > div > ul > li:nth-child(6) > span').click(function() {
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > button:nth-child(6)').click(function() {
     console.log('six child')
     setButtons();
   });
