@@ -297,7 +297,7 @@ function generateProductLink() {
         $("<a href='https://www.aliexpress.com/item/Scarf-Luxury-Brand-Hot-Sale-Women-200-70cm-Oversize-Cotton-Scarf-Smooth-Touch-Scarves-Chic-Plant/32719142379.html?spm=2114.10010108.1000013.30.7f6b4fbcVaRqT7&gps-id=pcDetailBottomMoreThisSeller&scm=1007.13339.128551.0&scm_id=1007.13339.128551.0&scm-url=1007.13339.128551.0&pvid=c10d9095-158f-4891-b5e5-f03738282111' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Violet Purple Paisley')) {
         $("<a href='https://www.aliexpress.com/item/DANKEYISI-Ethnic-Winter-Women-Scarf-Jacquard-Scarves-Floral-Print-Shawls-Ladies-Long-Pashminas-Fashion-Stole-Indian/32840324322.html?spm=a2g0s.9042311.0.0.27424c4dvrgnhV' target='_blank'>Order Now</a>").appendTo($(this));
-        $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
+        $("<p id='productAttr'>Style: 2</p>").appendTo($(this));
       } else if (product.includes('Solar System Bracelet')) {
         $("<a href='https://www.aliexpress.com/item/4000389136794.html?spm=a2g0s.12269583.0.0.2cc66b28yuYAfA' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Cork Yoga Mat')) {
