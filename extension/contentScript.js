@@ -101,24 +101,27 @@ function pasteAddress(address) {
 }
 
 function generateProductLink() {
-  $('#order-detail-container > div.pt-xs-2.pb-xs-4 > div > div > div > table > tbody > tr').each(function( index ) {
+  $('#order-detail-container > div.pt-xs-2.pb-xs-4 > div > div > div.panel.mb-xs-0.text-smaller.p-xs-4 > table > tbody > tr').each(function( index ) {
+    //console.log(index)
     if (index > 0) {
       //console.log($(this));
       let product = $(this)[0].childNodes[0].childNodes[1].childNodes[1].childNodes[0].innerText;
+      console.log(product)
       let attrCount = $(this)[0].childNodes[0].childNodes[1].childNodes[1].childNodes[3].childElementCount;
+      //console.log(attrCount)
       let productAttr = null;
 
       if (attrCount > 0) {
-        productAttr = $(this)[0].childNodes[0].childNodes[1].childNodes[1].childNodes[3].childNodes[0].childNodes[0].childNodes[7].innerText;
+        productAttr = $(this)[0].childNodes[0].childNodes[1].childNodes[1].childNodes[3].childNodes[0].childNodes[0].childNodes[3].innerText;
       }
 
       console.log(product, productAttr);
 
       if (product.includes("7 Chakra, 12 Constellation")) {
         if (productAttr == "12 Constellation") {
-          $("<a href='https://www.aliexpress.com/item/AMIU-12-Constellation-Lucky-Natural-Stone-Simple-Bracelet-Beads-Adjustable-Bracelet-Hollywood-Crystal-Beaded-Bohemia-Bracelets/32870248948.html?spm=a2g0s.9042311.0.0.23cb4c4dzqUQP0' target='_blank'>Order Now</a>").appendTo($(this));
+          $("<a href='https://www.aliexpress.com/item/32825102908.html' target='_blank'>Order Now</a>").appendTo($(this));
         } else {
-          $("<a href='https://www.aliexpress.com/item/AMIU-7-Colors-Lucky-Chakra-Natural-Stone-Simple-Bracelet-Beads-Adjustable-Bracelet-Natural-Crystal-Bohemia-Prayer/32882245473.html?spm=a2g0s.9042311.0.0.ac394c4drN8ZjI' target='_blank'>Order Now</a>").appendTo($(this));
+          $("<a href='https://www.aliexpress.com/item/32824968097.html' target='_blank'>Order Now</a>").appendTo($(this));
         }
       } else if (product.includes("108 Natural Sandalwood Prayer Beads Bracelet")) {
         $("<a href='https://www.aliexpress.com/item/32846433152.html?spm=a2g0s.9042311.0.0.27424c4dXS02jI' target='_blank'>Order Now</a>").appendTo($(this));
@@ -127,11 +130,11 @@ function generateProductLink() {
           $("<p id='productAttr'>Attr: 1</p>").appendTo($(this));
         } else if (productAttr == 'Black') {
           $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
-        } else if (productAttr == 'Brown') {
+        } else if (productAttr == 'Red') {
           $("<p id='productAttr'>Attr: 3</p>").appendTo($(this));
         } else if (productAttr == 'Green') {
           $("<p id='productAttr'>Attr: 4</p>").appendTo($(this));
-        } else if (productAttr == 'Red') {
+        } else if (productAttr == 'Dark Red') {
           $("<p id='productAttr'>Attr: 5</p>").appendTo($(this));
         }
       } else if (product.includes("Tibetan Buddhist Copper Rope Knot Bracelet")) {
@@ -190,43 +193,57 @@ function generateProductLink() {
       } else if (product.includes('Tibetan Buddhist Ball Prayer Bead Bracelet')) {
         $("<a href='https://www.aliexpress.com/store/product/AMIU-Tibetan-Buddhist-Ball-Prayer-Bead-Lucky-Charm-Tibetan-Bracelets-Bangles-For-Women-Men-Handmade-Knots/1675041_32850472242.html?spm=a2g1y.12024536.productList_2428021.subject_2' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Buddha Amulet Bracelet')) {
-        $("<a href='https://www.aliexpress.com/item/AMIU-Tibetan-Buddhist-Lucky-Woven-Amulet-Tibetan-Cord-Bracelets-Bangles-For-Women-Men-Handmade-Rope-Buddha/32939715293.html?spm=a2g0s.8937460.0.0.72c02e0e99R7LZ' target='_blank'>Order Now</a>").appendTo($(this));
+        $("<a href='https://www.aliexpress.com/item/AMIU-Tibetan-Buddhist-Lucky-Woven-Amulet-Tibetan-Cord-Bracelets-Bangles-For-Women-Men-Handmade-Rope-Buddha/32939715293.html' target='_blank'>Order Now</a>").appendTo($(this));
+        if (productAttr == 'Red') {
+          $("<p id='productAttr'>Attr: 1</p>").appendTo($(this));
+        } else if (productAttr == 'Blue') {
+          $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
+        } else if (productAttr == 'Green') {
+          $("<p id='productAttr'>Attr: 3</p>").appendTo($(this));
+        }
       } else if (product.includes('ibetan Lucky Rope Knots Braided Bracelet | Multi Color Braided Bracelet | Yoga Bracelet Meditation Bracelet Bracelet for Women Gift for Her')) {
         $("<a href='https://www.aliexpress.com/item/32853244746.html?spm=a2g0o.detail.1000060.1.75ae4d22xsQ8Oo&gps-id=pcDetailBottomMoreThisSeller&scm=1007.13339.128551.0&scm_id=1007.13339.128551.0&scm-url=1007.13339.128551.0&pvid=3641ca98-8c12-4ec7-b0a7-481b54088bf5' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Multi Color Braided Bracelet')) {
         $("<a href='https://www.aliexpress.com/item/AMIU-Tibetan-Buddhist-Lucky-Charm-Tibetan-Bracelets-Bangles-For-Women-Men-Handmade-Knots-Black-Rope-Christmas/32859116164.html?spm=2114.10010108.1000010.5.57422e38sKEIZZ&gps-id=pcDetailLeftTrendProduct&scm=1007.13438.130792.0&scm_id=1007.13438.130792.0&scm-url=1007.13438.130792.0&pvid=fc42e51a-45eb-491f-a213-5ca98fcde673' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Multi Color Tibetan Buddhist Handmade Lucky Rope Knots')) {
-        $("<a href='https://www.aliexpress.com/store/product/Eastisan-2017-Multi-Color-Tibetan-Buddhist-Lama-Braided-Knots-Lucky-Rope-Bracelet-For-Man-Women-Size/1940393_32822654691.html?spm=2114.12010612.8148356.13.45d81a7fW4sfbu' target='_blank'>Order Now</a>").appendTo($(this));
+        $("<a href='https://www.aliexpress.com/item/2017-AMIU-Handmade-Friendship-Bracelet-Hippy-Colorful-Love-Vintage-Lucky-Charm-Tibetan-Bracelets-Bangles-For-Women/32826062352.html' target='_blank'>Order Now</a>").appendTo($(this));
+        if (productAttr == 'Gray') {
+          $("<p id='productAttr'>Attr: 4</p>").appendTo($(this));
+        } else if (productAttr == 'Black') {
+          $("<p id='productAttr'>Attr: 5</p>").appendTo($(this));
+        } else if (productAttr == 'Gold') {
+          $("<p id='productAttr'>Attr: 11</p>").appendTo($(this));
+        }
       } else if (product.includes('Black Coconut Shell Braided Bracelet')) {
         $("<a href='https://www.aliexpress.com/item/Tibetan-buddhist-Braided-Cotton-thread-Lucky-Knots-Silver-Charm-bracelet-Natural-Coconut-shell-beads-Carved-OM/32894510488.html?spm=a2g0s.8937460.0.0.1d982e0eOBBnHY' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product == 'Tibetan Lucky Rope Knots Bracelet, Braided Bracelet, Yoga Bracelet, Meditation Bracelet, Prayer Bracelet, Mens Bracelet, Womens Bracelet' || product.includes('Original Tibetan Buddhist Handmade')) {
         if (productAttr == 'Brown') {
           $("<a href='https://www.aliexpress.com/item/Tibetan-Buddhist-Handmade-Lucky-Rope-Bracelet-Men-Tibetan-Buddhist-Knots-Size-Adjustable-Bracelet-For-Women/32868578644.html?spm=a2g0s.8937460.0.0.46d92e0euFJBXc' target='_blank'>Order Now</a>").appendTo($(this));
         } else {
-          $("<a href='https://www.aliexpress.com/item/2017-AMIU-Handmade-Friendship-Bracelet-Hippy-Colorful-Love-Vintage-Lucky-Charm-Tibetan-Bracelets-Bangles-For-Women/32826062352.html?spm=a2g0s.9042311.0.0.41904c4dWHBVcD' target='_blank'>Order Now</a>").appendTo($(this));
+          $("<a href='https://www.aliexpress.com/item/2017-AMIU-Handmade-Friendship-Bracelet-Hippy-Colorful-Love-Vintage-Lucky-Charm-Tibetan-Bracelets-Bangles-For-Women/32826062352.html' target='_blank'>Order Now</a>").appendTo($(this));
           if (productAttr == 'Bright Red') {
-            $("<p id='productAttr'>Attr: 1</p>").appendTo($(this));
-          } else if (productAttr == 'Dark Red') {
-            $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
-          } else if (productAttr == 'Multi Color') {
-            $("<p id='productAttr'>Attr: 3</p>").appendTo($(this));
-          } else if (productAttr == 'White') {
-            $("<p id='productAttr'>Attr: 4</p>").appendTo($(this));
-          } else if (productAttr == 'Black') {
-            $("<p id='productAttr'>Attr: 5</p>").appendTo($(this));
-          } else if (productAttr == 'Green') {
             $("<p id='productAttr'>Attr: 6</p>").appendTo($(this));
-          } else if (productAttr == 'Blue') {
+          } else if (productAttr == 'Dark Red') {
             $("<p id='productAttr'>Attr: 10</p>").appendTo($(this));
+          } else if (productAttr == 'Multi Color') {
+            $("<p id='productAttr'>Attr: 1</p>").appendTo($(this));
+          } else if (productAttr == 'White') {
+            $("<p id='productAttr'>Attr: 3</p>").appendTo($(this));
+          } else if (productAttr == 'Black') {
+            $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
+          } else if (productAttr == 'Green') {
+            $("<p id='productAttr'>Attr: 7</p>").appendTo($(this));
+          } else if (productAttr == 'Blue') {
+            $("<p id='productAttr'>Attr: 5</p>").appendTo($(this));
           }
         }
-        if (productAttr == 'Multi Colored') {
-          $("<p id='productAttr'>Attr: 1</p>").appendTo($(this));
-        } else if (productAttr == 'Green') {
-          $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
-        } else if (productAttr == 'Green') {
-          $("<p id='productAttr'>Attr: 3</p>").appendTo($(this));
-        }
+        // if (productAttr == 'Multi Colored') {
+        //   $("<p id='productAttr'>Attr: 1</p>").appendTo($(this));
+        // } else if (productAttr == 'Green') {
+        //   $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
+        // } else if (productAttr == 'Green') {
+        //   $("<p id='productAttr'>Attr: 3</p>").appendTo($(this));
+        // }
       } else if (product.includes('Happiness Tibetan')) {
         $("<a href='https://www.aliexpress.com/item/Eastisan-Tibetan-Buddhist-Handmade-Knots-Lucky-Rope-Bracelets-For-Women-Men-Buddhism-braided-Jewelry-Multi-Colors/32824972197.html?spm=2114.search0104.3.209.1fbf7e2357Ch3M&ws_ab_test=searchweb0_0,searchweb201602_9_10065_10068_10890_319_10546_10059_10884_317_10548_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_52,ppcSwitch_0&algo_expid=104449a6-8c6e-49f9-be90-bb97ee606e81-27&algo_pvid=104449a6-8c6e-49f9-be90-bb97ee606e81' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product == 'Tibetan Lucky Rope Knots Braided Bracelet | Colorful Braided Bracelet | Yoga Bracelet Meditation Bracelet Bracelet for Women Gift for Her') {
@@ -270,6 +287,9 @@ function generateProductLink() {
         $("<p id='style'>Style: 4</p>").appendTo($(this));
       } else if (product.includes("Gold Paisley")) {
         $("<a href='https://www.aliexpress.com/item/RUNMEIFA-Women-Polyester-Pashmina-Elegant-Fashion-Print-Floral-Paisley-Shawl-Wrap-Scarf-2018-New-Style-Free/32674410197.html?spm=a2g0s.9042311.0.0.27424c4dcEbF3N' target='_blank'>Order Now</a>").appendTo($(this));
+        if (productAttr == 'Green') {
+          $("<p id='style'>Style: 4</p>").appendTo($(this));
+        }
       } else if (product.includes("Tibetan Lucky Rope Knot Bracelet, Braided Bracelet, Yoga Bracelet, Meditation Bracelet, Prayer Bracelet, Mens & Womens Bracelet")) {
         $("<a href='https://www.aliexpress.com/store/product/AMIU-Handmade-Tibetan-Copper-Bead-Lucky-Rope-Bracelet-Bangles-For-Women-Men-Wax-Thread-Bracelets/1675041_32917757543.html?gps-id=6791677&scm=1007.14677.110221.0&scm_id=1007.14677.110221.0&scm-url=1007.14677.110221.0&pvid=833bd170-8625-4c9e-8d53-6027c8e88b9d&spm=a2g1y.promotion-20181111.promoteWysiwyg_134459388.0' target='_blank'>Order Now</a>").appendTo($(this));
         if (productAttr == 'Red') {
@@ -386,6 +406,24 @@ function generateProductLink() {
         }
       } else if (product.includes('Olive Nut Healing Bracelet')) {
         $("<a href='https://th.aliexpress.com/item/32824857285.html' target='_blank'>Order Now</a>").appendTo($(this));
+      } else if (product.includes('Blue Lapis Bracelet, Third Eye Chakra')) {
+        $("<a href='https://www.aliexpress.com/item/32906197145.html' target='_blank'>Order Now</a>").appendTo($(this));
+      } else if (product.includes('Red Tigers Eye Bracelet, Root Chakra Bracelet')) {
+        $("<a href='https://www.aliexpress.com/item/32827579322.html' target='_blank'>Order Now</a>").appendTo($(this));
+        $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
+      } else if (product.includes('Red Tibetan Inspired Buddha Rope Bracelet')) {
+        $("<a href='https://www.aliexpress.com/item/1005001479928482.html' target='_blank'>Order Now</a>").appendTo($(this));
+      } else if (product.includes('Red Tigers Eye Tibetan Mantra Bracelet')) {
+        $("<a href='https://www.aliexpress.com/item/33008333941.html' target='_blank'>Order Now</a>").appendTo($(this));
+        if (productAttr == '15cm' || productAttr == '16cm') {
+          $("<p id='productAttr'>Attr: 1</p>").appendTo($(this));
+        } else if (productAttr == '17cm' || productAttr == '18cm') {
+          $("<p id='productAttr'>Attr: 2</p>").appendTo($(this));
+        } else if (productAttr == '19cm' || productAttr == '20cm') {
+          $("<p id='productAttr'>Attr: 3</p>").appendTo($(this));
+        } 
+      } else if (product.includes('Red & Turqouise Colorful Rope Bracelet')) {
+        $("<a href='https://www.aliexpress.com/item/1005001479988224.html' target='_blank'>Order Now</a>").appendTo($(this));
       } else {
         
       }
