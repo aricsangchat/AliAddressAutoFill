@@ -317,7 +317,7 @@ function generateProductLink() {
         $("<a href='https://www.aliexpress.com/item/Scarf-Luxury-Brand-Hot-Sale-Women-200-70cm-Oversize-Cotton-Scarf-Smooth-Touch-Scarves-Chic-Plant/32719142379.html?spm=2114.10010108.1000013.30.7f6b4fbcVaRqT7&gps-id=pcDetailBottomMoreThisSeller&scm=1007.13339.128551.0&scm_id=1007.13339.128551.0&scm-url=1007.13339.128551.0&pvid=c10d9095-158f-4891-b5e5-f03738282111' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Violet Purple Paisley')) {
         $("<a href='https://www.aliexpress.com/item/DANKEYISI-Ethnic-Winter-Women-Scarf-Jacquard-Scarves-Floral-Print-Shawls-Ladies-Long-Pashminas-Fashion-Stole-Indian/32840324322.html?spm=a2g0s.9042311.0.0.27424c4dvrgnhV' target='_blank'>Order Now</a>").appendTo($(this));
-        $("<p id='productAttr'>Style: 2</p>").appendTo($(this));
+        $("<p id='style'>Style: 2</p>").appendTo($(this));
       } else if (product.includes('Solar System Bracelet')) {
         $("<a href='https://www.aliexpress.com/item/4000389136794.html?spm=a2g0s.12269583.0.0.2cc66b28yuYAfA' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Cork Yoga Mat')) {
@@ -383,6 +383,7 @@ function generateProductLink() {
         $("<a href='https://www.aliexpress.com/item/4000433834178.html?spm=2114.12010612.0.0.1df72152TMdowM&gps-id=pcStoreJustForYou&scm=1007.23125.137358.0&scm_id=1007.23125.137358.0&scm-url=1007.23125.137358.0&pvid=064ee589-4bc8-436e-99d0-0bd2986054b4' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Ganesh Meditation')) {
         $("<a href='https://www.aliexpress.com/item/32868683308.html?spm=a2g0s.9042311.0.0.27424c4d0Gj9by' target='_blank'>Order Now</a>").appendTo($(this));
+        $("<p id='style'>Style: 2</p>").appendTo($(this));
       } else if (product.includes('Pyramid Kit')) {
         $("<a href='https://www.aliexpress.com/item/33004149321.html?spm=a2g0s.9042311.0.0.27424c4d3JV0Ok' target='_blank'>Order Now</a>").appendTo($(this));
       } else if (product.includes('Tibetan Buddhist Coconut Shell Bracelet, Buddhist Charm Bracelet, Lucky Bracelet, OM Mani Padme Hum, Meditation Bracelet, Mens Bracelet')) {
