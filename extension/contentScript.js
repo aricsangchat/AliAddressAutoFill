@@ -51,9 +51,10 @@ function injectAddressInPopup(addressObject) {
 
 function getAddress() {
   const removeSpecialCharacters = (str) => {
-    let string = str.replace(/[^a-zA-Z0-9 ]/g, '');
-    string = string.toUpperCase();
-    return string;
+    // let string = str.replace(/[^a-zA-Z0-9 ]/g, '');
+    // string = string.toUpperCase();
+    // return string;
+    return str;
   } 
   let address = {
       name: document.getElementsByClassName("name").length >= 1 ? removeSpecialCharacters(document.getElementsByClassName("name")[0].innerHTML) : '',
@@ -425,6 +426,8 @@ function generateProductLink() {
         } 
       } else if (product.includes('Red & Turqouise Colorful Rope Bracelet')) {
         $("<a href='https://www.aliexpress.com/item/1005001479988224.html' target='_blank'>Order Now</a>").appendTo($(this));
+      } else if (product.includes('Vibe Lights')) {
+        $("<a href='https://www.aliexpress.com/item/1005002180284915.html' target='_blank'>Order Now</a>").appendTo($(this));
       } else {
         
       }
