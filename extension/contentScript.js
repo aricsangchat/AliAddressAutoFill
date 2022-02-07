@@ -458,28 +458,33 @@ function setButtons() {
 
 function updateStatusClick() {
   console.log('updateStatusClick')
-
-  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > button:nth-child(1)').click(function() {
+  // New
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > div > div > button:nth-child(1)').click(function() {
     console.log('first child')
     setButtons();
   });
-  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > button:nth-child(2)').click(function() {
+  // Automate
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > div > div > button:nth-child(2)').click(function() {
     console.log('second child')
     setButtons();
   });
-  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > button:nth-child(3)').click(function() {
+  // In Progress
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > div > div > button:nth-child(3)').click(function() {
     console.log('third child')
     setButtons();
   });
-  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > button:nth-child(4)').click(function() {
+  // Canceled
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > div > div > button:nth-child(4)').click(function() {
     console.log('fourth child')
     setButtons();
   });
-  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > button:nth-child(5)').click(function() {
+  // US Progress
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > div > div > button:nth-child(5)').click(function() {
     console.log('fifith child')
     setButtons();
   });
-  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > button:nth-child(6)').click(function() {
+  // Thai Post
+  $('#order-detail-container > div.col-group.mt-xs-4.mb-xs-2 > div:nth-child(2) > span > span.wt-pl-xs-0.wt-pr-xs-0.order-states-dropdown > span > div > div > div > div > button:nth-child(6)').click(function() {
     console.log('six child')
     setButtons();
   });
